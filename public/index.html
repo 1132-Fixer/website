@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script defer src="/x.js" data-website-id="9cd27a99-9a90-4dc6-9d20-dd1549b5dd18" data-host-url="https://umami.primehostingdev.xyz"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1132 Fixer for Windows, macOS and Chrome</title>
+<meta name="description" content="Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.">
+<meta name="keywords" content="1132 Fixer, download, Windows, macOS, Chrome, Chrome extension, browser extension, installer, app">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0F1724">
+<meta name="google-adsense-account" content="ca-pub-2131449718508015">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="1132 Fixer" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="canonical" href="/">
+<link rel="me" href="https://t.me/Team1132Fixer">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="1132 Fixer for Windows, macOS and Chrome">
+<meta property="og:description" content="Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.">
+<meta property="og:image" content="/seo.png">
+<meta property="og:image:alt" content="1132 Fixer download page preview">
+<meta property="og:site_name" content="1132 Fixer">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1132 Fixer for Windows, macOS and Chrome">
+<meta name="twitter:description" content="Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.">
+<meta name="twitter:image" content="/seo.png">
+<meta name="twitter:image:alt" content="1132 Fixer download page preview">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "1132 Fixer",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows, macOS, Chrome",
+  "image": "/seo.png",
+  "url": "/",
+  "description": "Download page for 1132 Fixer with installers for Windows and macOS and the Chrome extension.",
+  "sameAs": [
+    "https://t.me/Team1132Fixer"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #2E78D6;
+    --background: #0F1724;
+    --surface: #202B3D;
+    --surface-modal: #2A2530;
+    --success: #3CCF6E;
+    --warning: #FFB547;
+    --error: #EF5350;
+    --text-primary: #F5F7FA;
+    --text-secondary: #9AA5B4;
+    --border: #33415A;
+    --overlay: rgba(15,23,36,0.72);
+    --gradient-brand-start: #FFD24C;
+    --gradient-brand-end: #E8552A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background */
+  .bg {
+    position: fixed; inset: 0; z-index: 0;
+    background: var(--background);
+  }
+
+  /* Layout */
+  .page {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px 64px;
+    gap: 0;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    animation: fadeDown 0.25s ease-in-out both;
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 16px;
+  }
+  .app-icon {
+    width: 88px; height: 88px;
+    border-radius: 24px;
+    flex-shrink: 0;
+  }
+  .app-name {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(40px, 8vw, 56px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--gradient-brand-start) 0%, var(--gradient-brand-end) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .app-name span {
+    display: block;
+    font-size: 0.38em;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .tagline {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+  }
+
+  /* Divider */
+  .divider {
+    width: 100%;
+    max-width: 620px;
+    height: 1px;
+    background: var(--border);
+    margin: 32px auto;
+    animation: fadeIn 0.25s ease-in-out 0.1s both;
+  }
+
+  /* Download Card */
+  .download-card {
+    width: 100%;
+    max-width: 620px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    animation: fadeUp 0.25s ease-in-out 0.1s both;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    flex: 1;
+    padding: 16px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: color 0.15s ease-out, background 0.15s ease-out;
+    position: relative;
+  }
+  .tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--primary);
+    transition: left 0.15s ease-out, right 0.15s ease-out;
+  }
+  .tab.active {
+    color: var(--text-primary);
+  }
+  .tab.active::after {
+    left: 0; right: 0;
+  }
+  .tab:hover:not(.active) {
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.03);
+  }
+  .tab svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  /* Tab content */
+  .tab-panels { padding: 24px 24px 24px; }
+
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel.active { display: block; }
+
+  .os-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .version-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  /* Requirements */
+  .requirements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .req-item {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 12px 16px;
+  }
+  .req-label {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    margin-bottom: 3px;
+  }
+  .req-value {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-primary);
+  }
+
+  /* Download button */
+  .dl-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: var(--primary);
+    transition: background 0.15s ease-out;
+  }
+  .dl-btn:hover {
+    background: rgba(46,120,214,0.9);
+  }
+  .dl-btn:active {
+    background: rgba(46,120,214,0.8);
+  }
+  .dl-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+  .dl-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .dl-btn-compact {
+    margin-top: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  .dl-btn-compact:hover {
+    background: rgba(32,43,61,1);
+  }
+  .dl-btn-compact svg { width: 18px; height: 18px; }
+
+  .dl-meta {
+    margin-top: 12px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .dl-meta-item {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .dl-meta-item svg { width: 13px; height: 13px; color: var(--text-secondary); }
+
+  .top-menu {
+    width: fit-content;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    animation: fadeDown 0.2s ease-in-out both;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.15s ease-out, background 0.15s ease-out;
+  }
+  .menu-btn:hover {
+    color: var(--text-primary);
+    background: rgba(46,120,214,0.12);
+  }
+  .menu-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--overlay);
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    width: min(920px, 100%);
+    max-height: min(86vh, 820px);
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-modal);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    animation: fadeUp 0.2s ease-in-out both;
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  .modal-close {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.15s ease-out, border-color 0.15s ease-out, background 0.15s ease-out;
+  }
+  .modal-close:hover {
+    color: var(--text-primary);
+    border-color: var(--primary);
+    background: rgba(46,120,214,0.12);
+  }
+  .modal-close svg {
+    width: 18px;
+    height: 18px;
+  }
+  .discussion-tabs .tab {
+    padding: 15px 20px;
+    flex: 1 1 120px;
+  }
+  .discussion-tabs {
+    flex-wrap: wrap;
+  }
+  .discussion-body {
+    min-height: 600px;
+    overflow: auto;
+    padding: 16px;
+    background: var(--surface-modal);
+  }
+  .discussion-widget {
+    min-height: 600px;
+  }
+  .support-modal {
+    width: min(560px, 100%);
+  }
+  .support-body {
+    padding: 24px;
+  }
+  .support-body p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+  .support-action {
+    width: 100%;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 32px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-secondary);
+    text-align: center;
+    animation: fadeIn 0.25s ease-in-out 0.15s both;
+  }
+  footer strong { color: var(--text-primary); }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .page { padding: 28px 18px 48px; }
+    .tab { padding: 14px 8px; font-size: 15px; gap: 6px; }
+    .tab svg { width: 17px; height: 17px; }
+    .tab-panels { padding: 28px 24px 32px; }
+    .requirements { grid-template-columns: 1fr; }
+    .logo-wrap { flex-direction: column; gap: 14px; }
+    .top-menu {
+      width: 100%;
+      gap: 4px;
+      margin-bottom: 16px;
+      border-radius: 22px;
+    }
+    .menu-btn {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+    .modal-overlay { padding: 12px; }
+    .modal { max-height: 92vh; }
+    .modal-header { padding: 14px 16px; }
+    .discussion-body { padding: 12px; }
+    .support-body { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="page">
+  <nav class="top-menu" aria-label="Main menu">
+    <button class="menu-btn" type="button" onclick="openDiscussions()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        <path d="M8 9h8"/>
+        <path d="M8 13h5"/>
+      </svg>
+      Discussions
+    </button>
+    <button class="menu-btn" type="button" onclick="openSupport()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-6H6a6 6 0 0 1 12 0h-2v6h1a3 3 0 0 0 3-3v-3a8 8 0 0 0-8-8z"/>
+        <path d="M10 19h2a5 5 0 0 0 5-5"/>
+      </svg>
+      Support
+    </button>
+    <a class="menu-btn" href="https://t.me/Team1132Fixer" target="_blank" rel="noopener noreferrer me" aria-label="Join the 1132 Fixer Telegram channel">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M21.67 3.93a1.74 1.74 0 0 0-1.82-.23L3.2 10.54a1.73 1.73 0 0 0 .12 3.24l3.96 1.38 1.52 4.88a1.73 1.73 0 0 0 3.05.5l2.26-3.08 4.43 3.25a1.73 1.73 0 0 0 2.73-1.01l2.06-13.96a1.73 1.73 0 0 0-.66-1.81Zm-3.1 3.14-8.32 7.57a.75.75 0 0 0-.21.37l-.78 3.7-.95-3.06a.75.75 0 0 0-.47-.48l-3.07-1.07 13.8-5.69Zm.69 11.68-4.06-2.98a.75.75 0 0 0-1.04.15l-1.96 2.67.64-3.02 8.53-7.75-2.11 10.93Z"/>
+      </svg>
+      Telegram Channel
+    </a>
+  </nav>
+  <header>
+    <div class="logo-wrap">
+      <img class="app-icon" src="/app-icon-badge.png" alt="1132 Fixer icon" onerror="this.style.display='none'">
+      <div>
+        <div class="app-name">
+          1132
+          <span>Fixer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="download-card">
+    <div class="tabs">
+      <button class="tab" id="tab-windows" onclick="switchTab('windows')">
+        <!-- Windows logo -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.557L10.5 4.5V11.5H3V5.557ZM3 18.443L10.5 19.5V12.5H3V18.443ZM11.5 19.654L21 21V12.5H11.5V19.654ZM11.5 4.346V11.5H21V3L11.5 4.346Z"/></svg>
+        Windows
+      </button>
+      <button class="tab" id="tab-mac" onclick="switchTab('mac')">
+        <!-- Apple logo -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.79.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.84M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        macOS
+      </button>
+      <button class="tab" id="tab-chrome" onclick="switchTab('chrome')">
+        <!-- Chrome logo -->
+        <svg viewBox="0 0 305 305" fill="currentColor" aria-hidden="true">
+          <path d="M95.506,152.511c0,31.426,25.567,56.991,56.994,56.991c31.425,0,56.99-25.566,56.99-56.991 c0-31.426-25.565-56.993-56.99-56.993C121.073,95.518,95.506,121.085,95.506,152.511z"/>
+          <path d="M283.733,77.281c0.444-0.781,0.436-1.74-0.023-2.513c-13.275-22.358-32.167-41.086-54.633-54.159 C205.922,7.134,179.441,0.012,152.5,0.012c-46.625,0-90.077,20.924-119.215,57.407c-0.643,0.804-0.727,1.919-0.212,2.81 l42.93,74.355c0.45,0.78,1.28,1.25,2.164,1.25c0.112,0,0.226-0.008,0.339-0.023c1.006-0.137,1.829-0.869,2.083-1.852 c8.465-32.799,38.036-55.706,71.911-55.706c2.102,0,4.273,0.096,6.455,0.282c0.071,0.007,0.143,0.01,0.214,0.01H281.56 C282.459,78.545,283.289,78.063,283.733,77.281z"/>
+          <path d="M175.035,224.936c-0.621-0.803-1.663-1.148-2.646-0.876c-6.457,1.798-13.148,2.709-19.889,2.709 c-28.641,0-55.038-16.798-67.251-42.794c-0.03-0.064-0.063-0.126-0.098-0.188L23.911,77.719c-0.446-0.775-1.272-1.25-2.165-1.25 c-0.004,0-0.009,0-0.013,0c-0.898,0.005-1.725,0.49-2.165,1.272C6.767,100.456,0,126.311,0,152.511 c0,36.755,13.26,72.258,37.337,99.969c23.838,27.435,56.656,45.49,92.411,50.84c0.124,0.019,0.248,0.027,0.371,0.027 c0.883,0,1.713-0.47,2.164-1.25l42.941-74.378C175.732,226.839,175.657,225.739,175.035,224.936z"/>
+          <path d="M292.175,95.226h-85.974c-1.016,0-1.931,0.615-2.314,1.555c-0.384,0.94-0.161,2.02,0.564,2.73 c14.385,14.102,22.307,32.924,22.307,53c0,15.198-4.586,29.824-13.263,42.298c-0.04,0.058-0.077,0.117-0.112,0.178l-61.346,106.252 c-0.449,0.778-0.446,1.737,0.007,2.513c0.449,0.767,1.271,1.237,2.158,1.237c0.009,0,0.019,0,0.028,0 c40.37-0.45,78.253-16.511,106.669-45.222C289.338,231.032,305,192.941,305,152.511c0-19.217-3.532-37.956-10.498-55.698 C294.126,95.855,293.203,95.226,292.175,95.226z"/>
+        </svg>
+        Chrome
+      </button>
+    </div>
+
+    <!-- WINDOWS PANEL -->
+    <div class="tab-panels">
+      <div class="tab-panel" id="panel-windows">
+        <div class="os-label">Windows</div>
+        <div class="version-title" data-os="windows">1132 Fixer 0.0.1 for Windows</div>
+        <div class="requirements" data-os="windows">
+          <div class="req-item">
+            <div class="req-label">OS</div>
+            <div class="req-value">Windows 10 / 11</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Architecture</div>
+            <div class="req-value">x64 / ARM64</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">File Size</div>
+            <div class="req-value">76 MB</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Released</div>
+            <div class="req-value">Mar 1, 2026</div>
+          </div>
+        </div>
+        <a class="dl-btn" href="#" data-os="windows" data-variant="full" onclick="handleDownload(event,'windows','full')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Full installer for Windows
+        </a>
+        <a class="dl-btn dl-btn-compact" href="#" data-os="windows" data-variant="compact" onclick="handleDownload(event,'windows','compact')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Portable Version for Windows
+        </a>
+        <div class="dl-meta">
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Open source on GitHub
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+            Free to download
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            .exe installer
+          </span>
+        </div>
+      </div>
+
+      <!-- MAC PANEL -->
+      <div class="tab-panel" id="panel-mac">
+        <div class="os-label">macOS</div>
+        <div class="version-title" data-os="mac">1132 Fixer 0.0.1 for macOS</div>
+        <div class="requirements" data-os="mac">
+          <div class="req-item">
+            <div class="req-label">OS</div>
+            <div class="req-value">macOS 13 Ventura+</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Architecture</div>
+            <div class="req-value">Apple Silicon + Intel</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">File Size</div>
+            <div class="req-value">3 MB</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Released</div>
+            <div class="req-value">Feb 15, 2026</div>
+          </div>
+        </div>
+        <a class="dl-btn" href="#" data-os="mac" data-variant="full" onclick="handleDownload(event,'mac','full')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download for macOS
+        </a>
+        <div class="dl-meta">
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Notarized by Apple
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+            Open source on GitHub
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            Universal .dmg
+          </span>
+        </div>
+      </div>
+
+      <!-- CHROME PANEL -->
+      <div class="tab-panel" id="panel-chrome">
+        <div class="os-label">Chrome</div>
+        <div class="version-title" data-os="chrome">1132 Fixer for Chrome</div>
+        <div class="requirements" data-os="chrome">
+          <div class="req-item">
+            <div class="req-label">Browser</div>
+            <div class="req-value">Chrome / Edge / Brave</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Platform</div>
+            <div class="req-value">Windows / macOS / Linux</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Install</div>
+            <div class="req-value">Chrome Web Store</div>
+          </div>
+          <div class="req-item">
+            <div class="req-label">Price</div>
+            <div class="req-value">Free</div>
+          </div>
+        </div>
+        <a class="dl-btn" href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh" data-os="chrome" data-variant="full" target="_blank" rel="noopener noreferrer" onclick="handleDownload(event,'chrome','full')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Add to Chrome
+        </a>
+        <div class="dl-meta">
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Verified by Google
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+            Free to install
+          </span>
+          <span class="dl-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            Browser extension
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Provided to you for free</strong> by OP and HT.
+  </footer>
+</div>
+
+<div class="modal-overlay" id="discussion-modal" role="dialog" aria-modal="true" aria-labelledby="discussion-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="discussion-title">Discussions</div>
+      <button class="modal-close" type="button" onclick="closeDiscussions()" aria-label="Close discussions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="tabs discussion-tabs">
+      <button class="tab" id="discussion-tab-mac" type="button" onclick="switchDiscussionTab('mac')">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.79.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.84M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Mac
+      </button>
+      <button class="tab" id="discussion-tab-windows" type="button" onclick="switchDiscussionTab('windows')">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.557L10.5 4.5V11.5H3V5.557ZM3 18.443L10.5 19.5V12.5H3V18.443ZM11.5 19.654L21 21V12.5H11.5V19.654ZM11.5 4.346V11.5H21V3L11.5 4.346Z"/></svg>
+        Windows
+      </button>
+      <button class="tab" id="discussion-tab-ios" type="button" onclick="switchDiscussionTab('ios')">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 2.5h8A2.5 2.5 0 0 1 18.5 5v14A2.5 2.5 0 0 1 16 21.5H8A2.5 2.5 0 0 1 5.5 19V5A2.5 2.5 0 0 1 8 2.5Zm0 2A.5.5 0 0 0 7.5 5v14a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5h-1.2l-.45.75h-3.7l-.45-.75H8Zm3 13.25h2v1.25h-2v-1.25Z"/></svg>
+        iOS
+      </button>
+      <button class="tab" id="discussion-tab-android" type="button" onclick="switchDiscussionTab('android')">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.4 8.1 5.95 5.6a.75.75 0 1 1 1.3-.75L8.8 7.54A7.14 7.14 0 0 1 12 6.8c1.15 0 2.23.27 3.2.74l1.55-2.69a.75.75 0 1 1 1.3.75L16.6 8.1A6.18 6.18 0 0 1 19 13v.7H5V13c0-2.01.95-3.8 2.4-4.9ZM9 11.25a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Zm6 0a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8ZM5 15h14v3.5A2.5 2.5 0 0 1 16.5 21h-9A2.5 2.5 0 0 1 5 18.5V15Z"/></svg>
+        Android
+      </button>
+    </div>
+    <div class="discussion-body">
+      <div class="discussion-widget" id="discussion-widget"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="support-modal" role="dialog" aria-modal="true" aria-labelledby="support-title">
+  <div class="modal support-modal">
+    <div class="modal-header">
+      <div class="modal-title" id="support-title">Support</div>
+      <button class="modal-close" type="button" onclick="closeSupport()" aria-label="Close support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="support-body">
+      <p>If you need support with 1132, try to ask other users in the discussion tab. We can also offer paid support by sending a message to us on Telegram, the cost is 250 Stars ($5).</p>
+      <a class="dl-btn support-action" href="https://t.me/Team1132Fixer?direct" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21.67 3.93a1.74 1.74 0 0 0-1.82-.23L3.2 10.54a1.73 1.73 0 0 0 .12 3.24l3.96 1.38 1.52 4.88a1.73 1.73 0 0 0 3.05.5l2.26-3.08 4.43 3.25a1.73 1.73 0 0 0 2.73-1.01l2.06-13.96a1.73 1.73 0 0 0-.66-1.81Zm-3.1 3.14-8.32 7.57a.75.75 0 0 0-.21.37l-.78 3.7-.95-3.06a.75.75 0 0 0-.47-.48l-3.07-1.07 13.8-5.69Zm.69 11.68-4.06-2.98a.75.75 0 0 0-1.04.15l-1.96 2.67.64-3.02 8.53-7.75-2.11 10.93Z"/>
+        </svg>
+        Send a message
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ANALYTICS_ENDPOINT = '/data/x';
+  const DISCUSSION_PAGE_IDS = {
+    mac: 'discussions-mac',
+    windows: 'discussions-windows',
+    ios: 'discussions-ios',
+    android: 'discussions-android'
+  };
+  const DISCUSSION_CANONICAL_URLS = {
+    mac: 'https://1132-fixer.xyz/discussion-mac',
+    windows: 'https://1132-fixer.xyz/discussion-windows',
+    ios: 'https://1132-fixer.xyz/discussion-ios',
+    android: 'https://1132-fixer.xyz/discussion-android'
+  };
+  let activeDiscussionOS = 'mac';
+
+  function switchTab(os) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + os).classList.add('active');
+    document.getElementById('panel-' + os).classList.add('active');
+  }
+
+  function openDiscussions() {
+    const modal = document.getElementById('discussion-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    switchDiscussionTab(activeDiscussionOS || detectOS());
+  }
+
+  function closeDiscussions() {
+    const modal = document.getElementById('discussion-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function openSupport() {
+    const modal = document.getElementById('support-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSupport() {
+    const modal = document.getElementById('support-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function switchDiscussionTab(os) {
+    activeDiscussionOS = os;
+    document.querySelectorAll('.discussion-tabs .tab').forEach(t => t.classList.remove('active'));
+    const tab = document.getElementById('discussion-tab-' + os);
+    if (tab) tab.classList.add('active');
+    updateCanonicalUrl(DISCUSSION_CANONICAL_URLS[os]);
+    loadDiscussionWidget(DISCUSSION_PAGE_IDS[os]);
+  }
+
+  function loadDiscussionWidget(pageId) {
+    const widget = document.getElementById('discussion-widget');
+    if (!widget || !pageId) return;
+    widget.innerHTML = '';
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://comments.app/js/widget.js?3';
+    script.setAttribute('data-comments-app-website', '0MaHELfn');
+    script.setAttribute('data-limit', '10');
+    script.setAttribute('data-height', '600');
+    script.setAttribute('data-page-id', pageId);
+    script.setAttribute('data-color', '2A2530');
+    script.setAttribute('data-colorful', '1');
+    script.setAttribute('data-dark', '1');
+    widget.appendChild(script);
+  }
+
+  function updateCanonicalUrl(href) {
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = href;
+  }
+
+  document.getElementById('discussion-modal').addEventListener('click', event => {
+    if (event.target.id === 'discussion-modal') closeDiscussions();
+  });
+
+  document.getElementById('support-modal').addEventListener('click', event => {
+    if (event.target.id === 'support-modal') closeSupport();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeDiscussions();
+      closeSupport();
+    }
+  });
+
+  function detectOS() {
+    const ua = navigator.userAgent || navigator.platform || '';
+    if (/Mac/.test(ua) && !/iPhone|iPad/.test(ua)) return 'mac';
+    return 'windows';
+  }
+
+  const GITHUB_REPOS = {
+    windows: 'PrimeUpYourLife/1132-Fixer-Windows',
+    mac: 'PrimeUpYourLife/1132-fixer'
+  };
+
+  const OS_LABELS = {
+    windows: 'Windows',
+    mac: 'macOS',
+    chrome: 'Chrome'
+  };
+
+  function formatBytes(bytes) {
+    if (!Number.isFinite(bytes) || bytes <= 0) return 'N/A';
+    const units = ['B', 'KB', 'MB', 'GB'];
+    let size = bytes;
+    let idx = 0;
+    while (size >= 1024 && idx < units.length - 1) {
+      size /= 1024;
+      idx += 1;
+    }
+    const precision = size >= 100 ? 0 : size >= 10 ? 1 : 2;
+    return `${size.toFixed(precision)} ${units[idx]}`;
+  }
+
+  function formatDate(isoDate) {
+    if (!isoDate) return 'N/A';
+    const dt = new Date(isoDate);
+    if (Number.isNaN(dt.getTime())) return 'N/A';
+    return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function pickAssetsByOS(assets, os) {
+    const candidates = assets.filter(asset => {
+      const name = asset.name.toLowerCase();
+      if (os === 'windows') return /(\.exe|\.msi|\.zip)/.test(name) || name.includes('win');
+      return /(\.dmg|\.pkg|\.zip)/.test(name) || name.includes('mac') || name.includes('osx');
+    });
+
+    if (os === 'windows') {
+      const isPortable = asset => /portable|compact|lite|\.zip(?:$|\?)/.test(asset.name.toLowerCase());
+      const compact = candidates.find(isPortable) || null;
+      const full = candidates.find(asset => {
+        const name = asset.name.toLowerCase();
+        return /setup|installer/.test(name) && !isPortable(asset);
+      }) || candidates.find(asset => {
+        const name = asset.name.toLowerCase();
+        return /(\.exe|\.msi)(?:$|\?)/.test(name) && !isPortable(asset);
+      }) || null;
+      return { full, compact };
+    }
+
+    const full = candidates.find(a => /(\.dmg|\.pkg)/.test(a.name.toLowerCase())) || candidates[0] || null;
+    return { full, compact: null };
+  }
+
+  function updateRequirements(os, release, asset) {
+    const requirements = document.querySelector(`.requirements[data-os="${os}"]`);
+    if (!requirements || !asset) return;
+    const values = requirements.querySelectorAll('.req-value');
+    if (values.length < 4) return;
+
+    if (os === 'windows') {
+      values[0].textContent = 'Windows 10 / 11';
+      values[1].textContent = 'x64 / ARM64';
+    } else {
+      values[0].textContent = 'macOS 13 Ventura+';
+      values[1].textContent = 'Apple Silicon + Intel';
+    }
+    values[2].textContent = formatBytes(asset.size);
+    values[3].textContent = formatDate(release.published_at);
+  }
+
+  function updateVersionTitle(os, version) {
+    const titleEl = document.querySelector(`.version-title[data-os="${os}"]`);
+    if (!titleEl) return;
+    titleEl.textContent = `1132 Fixer ${version} for ${OS_LABELS[os]}`;
+  }
+
+  function updateButton(os, variant, asset) {
+    const btn = document.querySelector(`.dl-btn[data-os="${os}"][data-variant="${variant}"]`);
+    if (!btn) return;
+    if (!asset) {
+      if (variant === 'compact') {
+        btn.style.display = 'none';
+      }
+      btn.removeAttribute('href');
+      btn.setAttribute('aria-disabled', 'true');
+      btn.style.opacity = '0.6';
+      btn.style.pointerEvents = 'none';
+      return;
+    }
+    if (variant === 'compact') {
+      btn.style.display = '';
+    }
+    btn.href = asset.browser_download_url;
+    btn.setAttribute('download', asset.name);
+    btn.removeAttribute('aria-disabled');
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+  }
+
+  function handleDownload(e, os, variant) {
+    const btn = e.currentTarget;
+    const href = btn && btn.getAttribute('href');
+    if (!href || href === '#') {
+      e.preventDefault();
+      alert(`No ${OS_LABELS[os]} ${variant || 'full'} download is currently available.`);
+      return;
+    }
+
+    sendDownloadAnalytics({
+      os,
+      variant,
+      url: href,
+      filename: btn.getAttribute('download') || ''
+    });
+  }
+
+  function sendDownloadAnalytics(payload) {
+    const body = JSON.stringify(payload);
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([body], { type: 'application/json' });
+      navigator.sendBeacon(ANALYTICS_ENDPOINT, blob);
+      return;
+    }
+
+    fetch(ANALYTICS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+      keepalive: true
+    }).catch(err => {
+      console.error('Failed to send download analytics:', err);
+    });
+  }
+
+  async function hydrateOSFromGitHub(os) {
+    const repo = GITHUB_REPOS[os];
+    if (!repo || repo.startsWith('OWNER/')) return;
+    try {
+      const response = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+        headers: { Accept: 'application/vnd.github+json' }
+      });
+      if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+      const release = await response.json();
+      const version = release.tag_name || release.name || 'latest';
+      const assets = pickAssetsByOS(release.assets || [], os);
+
+      updateVersionTitle(os, version);
+      updateRequirements(os, release, assets.full || assets.compact);
+      updateButton(os, 'full', assets.full);
+      if (os === 'windows') updateButton(os, 'compact', assets.compact);
+    } catch (err) {
+      console.error(`Failed to load ${os} release metadata from GitHub:`, err);
+    }
+  }
+
+  async function hydrateFromGitHub() {
+    await Promise.all([
+      hydrateOSFromGitHub('windows'),
+      hydrateOSFromGitHub('mac')
+    ]);
+  }
+
+  // Auto-select tab on load
+  switchTab(detectOS());
+  hydrateFromGitHub();
+</script>
+</body>
+</html>
