@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1132 Fixer — promo overlay</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="16:9 looping promo overlay for 1132 Fixer. Independent project. Not affiliated with Zoom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="promo.css">
+</head>
+<body>
+  <main class="stage looping" id="stage" data-document-role="page" data-label="Loop">
+    <div class="bg-depth" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="gear-watermark">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path fill="currentColor" d="M25.2 4.4h13.6l1.6 7.3 4.7 2 6.2-4.3 9.6 9.6-4.3 6.2 2 4.7 7.3 1.6v13.6l-7.3 1.6-2 4.7 4.3 6.2-9.6 9.6-6.2-4.3-4.7 2-1.6 7.3H25.2l-1.6-7.3-4.7-2-6.2 4.3-9.6-9.6 4.3-6.2-2-4.7L2.1 38.8V25.2l7.3-1.6 2-4.7-4.3-6.2 9.6-9.6 6.2 4.3 4.7-2 1.6-7.3ZM32 42.5a10.5 10.5 0 1 0 0-21 10.5 10.5 0 0 0 0 21Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="frame" aria-hidden="true"></div>
+
+    <section class="slide is-active" id="slide-identity" data-document-role="page" data-label="Identity">
+      <div class="slide-inner" style="justify-content:center;align-items:flex-start">
+        <div class="copy">
+          <p class="kicker">1132 Fixer</p>
+          <div class="lockup">
+            <img class="mark" src="../app-icon-badge.png" width="168" height="168" alt="1132 Fixer">
+            <div class="wordmark">
+              <span class="n1132">1132</span>
+              <span class="fixer">Fixer</span>
+            </div>
+          </div>
+          <p class="tagline">For Windows, macOS and Chrome</p>
+          <p class="sub">Local tools that clear stale Zoom state. Private, local, Zoom-only in the browser. Independent project. Not affiliated with Zoom.</p>
+          <div class="chips" aria-label="Chrome claims">
+            <span class="chip"><span class="dot"></span>Private</span>
+            <span class="chip local"><span class="dot"></span>Local</span>
+            <span class="chip zoom"><span class="dot"></span>Zoom-only</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-meeting" data-document-role="page" data-label="Meeting overlay">
+      <div class="slide-inner">
+        <div class="overlay-layout">
+          <div class="rail">
+            <img class="mark" src="../app-icon-badge.png" width="120" height="120" alt="">
+            <div class="wordmark">
+              <span class="n1132" style="font-size:44px">1132</span>
+              <span class="fixer" style="font-size:14px">Fixer</span>
+            </div>
+            <div class="chips" style="flex-direction:column;align-items:flex-start">
+              <span class="chip"><span class="dot"></span>Private</span>
+              <span class="chip local"><span class="dot"></span>Local</span>
+              <span class="chip zoom"><span class="dot"></span>Zoom-only</span>
+            </div>
+          </div>
+          <div class="camera-well" aria-hidden="true"></div>
+          <div class="rail" style="align-items:flex-end;text-align:right">
+            <p class="sub" style="max-width:240px">1132-fixer.xyz</p>
+          </div>
+          <div class="lower-third">
+            <img class="mark" src="../app-icon-badge.png" width="72" height="72" alt="">
+            <div>
+              <div class="title">1132 Fixer</div>
+              <div class="meta">Independent project. Not affiliated with Zoom.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-chrome" data-document-role="page" data-label="Chrome">
+      <div class="slide-inner chrome-row">
+        <div class="copy">
+          <p class="kicker">Chrome graphics</p>
+          <div class="wordmark">
+            <span class="n1132">1132</span>
+            <span class="fixer">Fixer</span>
+          </div>
+          <p class="tagline">Private. Local. Zoom-only.</p>
+          <p class="sub">User-click Zoom-origin cleanup in the browser. Cookies and this tab’s Zoom site data only. Opening the popup does nothing. Does not repair Windows Zoom profiles.</p>
+          <div class="chips">
+            <span class="chip"><span class="dot"></span>Private</span>
+            <span class="chip local"><span class="dot"></span>Local</span>
+            <span class="chip zoom"><span class="dot"></span>Zoom-only</span>
+          </div>
+        </div>
+        <aside class="popup-mock" aria-label="Synthetic Chrome popup. No personal data.">
+          <div class="popup-top">
+            <span class="badge">v1.2.7</span>
+            <span class="badge">Zoom-only</span>
+          </div>
+          <div class="popup-head">
+            <img src="../app-icon-badge.png" width="64" height="64" alt="">
+            <div class="name">1132 FIXER</div>
+            <div class="desc">A focused browser cleanup for Zoom error 1132.</div>
+          </div>
+          <div class="status-pill"><span class="sdot"></span>READY · zoom.us</div>
+          <button class="fix-btn" type="button" tabindex="-1">FIX ZOOM</button>
+          <p class="popup-foot">Synthetic UI. Hostname is a product origin, not a person.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-platforms" data-document-role="page" data-label="Platforms">
+      <div class="slide-inner">
+        <div>
+          <p class="kicker">Platforms</p>
+          <div class="lockup">
+            <img class="mark" src="../app-icon-badge.png" width="168" height="168" alt="1132 Fixer">
+            <div class="wordmark">
+              <span class="n1132">1132</span>
+              <span class="fixer">Fixer</span>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Windows</h3>
+            <p>Local helper profile. Launches Zoom as a dedicated Windows user on this machine. No cloud account in the fixer itself.</p>
+          </article>
+          <article class="card">
+            <h3>macOS</h3>
+            <p>Desktop app for Mac. Same product family, separate installer. Independent of Chrome site data.</p>
+          </article>
+          <article class="card">
+            <h3>Chrome</h3>
+            <p>Private, local, Zoom-only. One guided click. Does not repair Windows Zoom profiles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-cta" data-document-role="page" data-label="CTA">
+      <div class="slide-inner" style="justify-content:center;align-items:flex-start;gap:12px">
+        <p class="kicker">Get it</p>
+        <div class="lockup">
+          <img class="mark" src="../app-icon-badge.png" width="168" height="168" alt="1132 Fixer">
+          <div class="wordmark">
+            <span class="n1132">1132</span>
+            <span class="fixer">Fixer</span>
+          </div>
+        </div>
+        <p class="tagline">1132-fixer.xyz</p>
+        <p class="sub">Windows, macOS, and the Chrome extension. Free to install. Independent project. Not affiliated with Zoom.</p>
+        <div class="cta" aria-hidden="true">1132-fixer.xyz</div>
+      </div>
+    </section>
+
+    <p class="legal">Independent project. Not affiliated with Zoom.</p>
+    <div class="progress" aria-hidden="true"><span></span></div>
+  </main>
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var params = new URLSearchParams(location.search);
+      var still = params.get('still');
+      var names = slides.map(function (s) { return s.id.replace('slide-', ''); });
+
+      function scale() {
+        var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        stage.style.transform = 'scale(' + s + ')';
+      }
+      window.addEventListener('resize', scale);
+      scale();
+
+      function show(name) {
+        slides.forEach(function (s) {
+          s.classList.toggle('is-active', s.id === 'slide-' + name);
+        });
+      }
+
+      if (still) {
+        stage.classList.remove('looping');
+        stage.classList.add('still');
+        if (names.indexOf(still) !== -1) show(still);
+        return;
+      }
+
+      var i = 0;
+      var dwell = 8000;
+      setInterval(function () {
+        i = (i + 1) % names.length;
+        show(names[i]);
+      }, dwell);
+    }());
+  </script>
+</body>
+</html>

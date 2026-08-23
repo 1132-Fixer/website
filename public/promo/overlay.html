@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1132 Fixer — 16:9 Zoom meeting overlay</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="promo.css">
+</head>
+<body>
+  <main class="stage still" id="stage" data-document-role="page" data-label="16:9 overlay">
+    <div class="bg-depth" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="gear-watermark">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path fill="currentColor" d="M25.2 4.4h13.6l1.6 7.3 4.7 2 6.2-4.3 9.6 9.6-4.3 6.2 2 4.7 7.3 1.6v13.6l-7.3 1.6-2 4.7 4.3 6.2-9.6 9.6-6.2-4.3-4.7 2-1.6 7.3H25.2l-1.6-7.3-4.7-2-6.2 4.3-9.6-9.6 4.3-6.2-2-4.7L2.1 38.8V25.2l7.3-1.6 2-4.7-4.3-6.2 9.6-9.6 6.2 4.3 4.7-2 1.6-7.3ZM32 42.5a10.5 10.5 0 1 0 0-21 10.5 10.5 0 0 0 0 21Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="frame" aria-hidden="true"></div>
+    <section class="slide is-active">
+      <div class="slide-inner">
+        <div class="overlay-layout">
+          <div class="rail">
+            <img class="mark" src="../app-icon-badge.png" width="120" height="120" alt="1132 Fixer">
+            <div class="wordmark">
+              <span class="n1132" style="font-size:44px">1132</span>
+              <span class="fixer" style="font-size:14px">Fixer</span>
+            </div>
+            <div class="chips" style="flex-direction:column;align-items:flex-start">
+              <span class="chip"><span class="dot"></span>Private</span>
+              <span class="chip local"><span class="dot"></span>Local</span>
+              <span class="chip zoom"><span class="dot"></span>Zoom-only</span>
+            </div>
+          </div>
+          <div class="camera-well" aria-hidden="true"></div>
+          <div class="rail" style="align-items:flex-end;text-align:right">
+            <p class="sub" style="max-width:240px">1132-fixer.xyz</p>
+          </div>
+          <div class="lower-third">
+            <img class="mark" src="../app-icon-badge.png" width="72" height="72" alt="">
+            <div>
+              <div class="title">1132 Fixer</div>
+              <div class="meta">Independent project. Not affiliated with Zoom.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p class="legal">Independent project. Not affiliated with Zoom.</p>
+  </main>
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      function scale() {
+        var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        stage.style.transform = 'scale(' + s + ')';
+      }
+      window.addEventListener('resize', scale);
+      scale();
+    }());
+  </script>
+</body>
+</html>

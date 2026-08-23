@@ -23,6 +23,8 @@
 <meta property="og:title" content="1132 Fixer for Windows, macOS and Chrome">
 <meta property="og:description" content="Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.">
 <meta property="og:image" content="/seo.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
 <meta property="og:image:alt" content="1132 Fixer download page preview">
 <meta property="og:site_name" content="1132 Fixer">
 
@@ -108,8 +110,11 @@
   }
   .app-icon {
     width: 88px; height: 88px;
-    border-radius: 24px;
+    border-radius: 0;
+    background: transparent;
     flex-shrink: 0;
+    display: block;
+    overflow: visible;
   }
   .app-name {
     font-family: 'Inter', sans-serif;
@@ -210,6 +215,20 @@
     display: none;
   }
   .tab-panel.active { display: block; }
+
+  /* No-JavaScript fallback: tab panels are revealed by switchTab(), so with
+     scripting off nothing in .tab-panels renders. This block is the honest,
+     script-free path to the real download sources. */
+  .noscript-fallback {
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--text-secondary);
+  }
+  .noscript-fallback ul { margin: 12px 0 0; padding-left: 20px; }
+  .noscript-fallback li { margin-bottom: 6px; }
+  .noscript-fallback a { color: var(--primary); }
 
   .os-label {
     font-family: 'Inter', sans-serif;
@@ -461,6 +480,21 @@
     animation: fadeIn 0.25s ease-in-out 0.15s both;
   }
   footer strong { color: var(--text-primary); }
+  footer .disclaimer {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .scope-note {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--text-secondary);
+    margin: -8px 0 16px;
+  }
 
   /* Animations */
   @keyframes fadeDown {
@@ -532,7 +566,7 @@
   </nav>
   <header>
     <div class="logo-wrap">
-      <img class="app-icon" src="/app-icon-badge.png" alt="1132 Fixer icon" onerror="this.style.display='none'">
+      <img class="app-icon" src="/app-icon-badge.png" width="88" height="88" alt="1132 Fixer icon" onerror="this.style.display='none'">
       <div>
         <div class="app-name">
           1132
@@ -569,7 +603,7 @@
     <div class="tab-panels">
       <div class="tab-panel" id="panel-windows">
         <div class="os-label">Windows</div>
-        <div class="version-title" data-os="windows">1132 Fixer 0.0.1 for Windows</div>
+        <div class="version-title" data-os="windows">1132 Fixer for Windows</div>
         <div class="requirements" data-os="windows">
           <div class="req-item">
             <div class="req-label">OS</div>
@@ -581,14 +615,14 @@
           </div>
           <div class="req-item">
             <div class="req-label">File Size</div>
-            <div class="req-value">76 MB</div>
+            <div class="req-value">&mdash;</div>
           </div>
           <div class="req-item">
             <div class="req-label">Released</div>
-            <div class="req-value">Mar 1, 2026</div>
+            <div class="req-value">&mdash;</div>
           </div>
         </div>
-        <a class="dl-btn" href="#" data-os="windows" data-variant="full" onclick="handleDownload(event,'windows','full')">
+        <a class="dl-btn" href="https://github.com/1132-Fixer/windows/releases/latest" data-fallback-href="https://github.com/1132-Fixer/windows/releases/latest" data-os="windows" data-variant="full" onclick="handleDownload(event,'windows','full')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -596,7 +630,7 @@
           </svg>
           Full installer for Windows
         </a>
-        <a class="dl-btn dl-btn-compact" href="#" data-os="windows" data-variant="compact" onclick="handleDownload(event,'windows','compact')">
+        <a class="dl-btn dl-btn-compact" href="https://github.com/1132-Fixer/windows/releases/latest" data-fallback-href="https://github.com/1132-Fixer/windows/releases/latest" data-os="windows" data-variant="compact" onclick="handleDownload(event,'windows','compact')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -623,7 +657,7 @@
       <!-- MAC PANEL -->
       <div class="tab-panel" id="panel-mac">
         <div class="os-label">macOS</div>
-        <div class="version-title" data-os="mac">1132 Fixer 0.0.1 for macOS</div>
+        <div class="version-title" data-os="mac">1132 Fixer for macOS</div>
         <div class="requirements" data-os="mac">
           <div class="req-item">
             <div class="req-label">OS</div>
@@ -635,14 +669,14 @@
           </div>
           <div class="req-item">
             <div class="req-label">File Size</div>
-            <div class="req-value">3 MB</div>
+            <div class="req-value">&mdash;</div>
           </div>
           <div class="req-item">
             <div class="req-label">Released</div>
-            <div class="req-value">Feb 15, 2026</div>
+            <div class="req-value">&mdash;</div>
           </div>
         </div>
-        <a class="dl-btn" href="#" data-os="mac" data-variant="full" onclick="handleDownload(event,'mac','full')">
+        <a class="dl-btn" href="https://github.com/1132-Fixer/macos/releases/latest" data-fallback-href="https://github.com/1132-Fixer/macos/releases/latest" data-os="mac" data-variant="full" onclick="handleDownload(event,'mac','full')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -670,14 +704,15 @@
       <div class="tab-panel" id="panel-chrome">
         <div class="os-label">Chrome</div>
         <div class="version-title" data-os="chrome">1132 Fixer for Chrome</div>
+        <p class="scope-note">Browser extension. User-triggered Zoom site-data cleanup in the browser. Does not repair Windows Zoom profiles.</p>
         <div class="requirements" data-os="chrome">
           <div class="req-item">
             <div class="req-label">Browser</div>
             <div class="req-value">Chrome / Edge / Brave</div>
           </div>
           <div class="req-item">
-            <div class="req-label">Platform</div>
-            <div class="req-value">Windows / macOS / Linux</div>
+            <div class="req-label">Scope</div>
+            <div class="req-value">Zoom-origin in the browser</div>
           </div>
           <div class="req-item">
             <div class="req-label">Install</div>
@@ -699,7 +734,7 @@
         <div class="dl-meta">
           <span class="dl-meta-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Verified by Google
+            Zoom-origin only
           </span>
           <span class="dl-meta-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
@@ -712,10 +747,23 @@
         </div>
       </div>
     </div>
+
+    <noscript>
+      <div class="noscript-fallback">
+        The download panels above need JavaScript. Without it, get the current
+        build directly from its source:
+        <ul>
+          <li><a href="https://github.com/1132-Fixer/windows/releases/latest">Latest Windows release on GitHub</a></li>
+          <li><a href="https://github.com/1132-Fixer/macos/releases/latest">Latest macOS release on GitHub</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">1132 Fixer for Chrome on the Chrome Web Store</a></li>
+        </ul>
+      </div>
+    </noscript>
   </div>
 
   <footer>
     <strong>Provided to you for free</strong> by OP and HT.
+    <span class="disclaimer">Independent project. Not affiliated with Zoom.</span>
   </footer>
 </div>
 
@@ -965,17 +1013,59 @@
     titleEl.textContent = `1132 Fixer ${version} for ${OS_LABELS[os]}`;
   }
 
-  function updateButton(os, variant, asset) {
-    const btn = document.querySelector(`.dl-btn[data-os="${os}"][data-variant="${variant}"]`);
+  // Put a button back into its pre-hydration state: pointing at the release
+  // page (true and reachable without any API call) and claiming nothing about
+  // a specific file.
+  function restoreFallbackHref(btn) {
     if (!btn) return;
-    if (!asset) {
-      if (variant === 'compact') {
-        btn.style.display = 'none';
-      }
+    const fallback = btn.getAttribute('data-fallback-href');
+    if (fallback) {
+      btn.setAttribute('href', fallback);
+      btn.removeAttribute('aria-disabled');
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+    } else {
       btn.removeAttribute('href');
       btn.setAttribute('aria-disabled', 'true');
       btn.style.opacity = '0.6';
       btn.style.pointerEvents = 'none';
+    }
+    btn.removeAttribute('download');
+  }
+
+  // Hydration could not establish the truth. Leave every hydrated field in the
+  // honest "not known" state rather than a stale or invented one.
+  function restoreUnhydratedState(os) {
+    const titleEl = document.querySelector(`.version-title[data-os="${os}"]`);
+    if (titleEl) titleEl.textContent = `1132 Fixer for ${OS_LABELS[os]}`;
+
+    const requirements = document.querySelector(`.requirements[data-os="${os}"]`);
+    if (requirements) {
+      const values = requirements.querySelectorAll('.req-value');
+      // Only the size and date fields depend on the release; OS and
+      // architecture are static facts.
+      if (values.length >= 4) {
+        values[2].textContent = '\u2014';
+        values[3].textContent = '\u2014';
+      }
+    }
+
+    document
+      .querySelectorAll(`.dl-btn[data-os="${os}"]`)
+      .forEach(restoreFallbackHref);
+  }
+
+  function updateButton(os, variant, asset) {
+    const btn = document.querySelector(`.dl-btn[data-os="${os}"][data-variant="${variant}"]`);
+    if (!btn) return;
+    if (!asset) {
+      // No matching asset was found in the release. The release page itself is
+      // still a true, reachable source, so fall back to it rather than
+      // presenting a dead button, which would imply no download exists.
+      if (variant === 'compact') {
+        btn.style.display = 'none';
+      }
+      restoreFallbackHref(btn);
       return;
     }
     if (variant === 'compact') {
@@ -992,8 +1082,10 @@
     const btn = e.currentTarget;
     const href = btn && btn.getAttribute('href');
     if (!href || href === '#') {
+      // Do not claim the download does not exist. All we know is that this
+      // button has no target yet.
       e.preventDefault();
-      alert(`No ${OS_LABELS[os]} ${variant || 'full'} download is currently available.`);
+      alert(`The ${OS_LABELS[os]} download link is not ready yet. Please reload the page, or open the project releases page on GitHub.`);
       return;
     }
 
@@ -1041,6 +1133,11 @@
       updateButton(os, 'full', assets.full);
       if (os === 'windows') updateButton(os, 'compact', assets.compact);
     } catch (err) {
+      // The GitHub API is unauthenticated here and rate limited to 60 requests
+      // per hour per IP, so this path is ordinary, not exceptional. Roll the
+      // panel back to the "not known" state so a failed lookup can never leave
+      // a stale or invented version, size, date, or download link on screen.
+      restoreUnhydratedState(os);
       console.error(`Failed to load ${os} release metadata from GitHub:`, err);
     }
   }

@@ -1,0 +1,86 @@
+{
+  "name": "1132 Fixer promo overlay family",
+  "disclaimer": "Independent project. Not affiliated with Zoom.",
+  "primary_mark": "public/app-icon-badge.png",
+  "gear": "secondary watermark only",
+  "chrome_claims": ["Private", "Local", "Zoom-only"],
+  "pii": false,
+  "loop": {
+    "html": "public/promo/index.html",
+    "dwell_ms": 8000,
+    "canvas": "1920x1080"
+  },
+  "frames": [
+    {
+      "path": "public/promo/frames/overlay-16x9.png",
+      "role": "Zoom meeting overlay / virtual background",
+      "w": 1920,
+      "h": 1080,
+      "mode": "RGB",
+      "bytes": 771391,
+      "sha256": "db2f56c055a7a6a340163c253ebcbd62bef8f6436d91974a6b8fb8b024ebf7f2"
+    },
+    {
+      "path": "public/promo/frames/promo-1280x640.png",
+      "role": "historical 1280x640 promo",
+      "w": 1280,
+      "h": 640,
+      "mode": "RGB",
+      "bytes": 451693,
+      "sha256": "513943e70845c77b3c6af011a21925cd3bc5028ca1376f70bbf542b2677e6849"
+    },
+    {
+      "path": "public/promo/frames/chrome-16x9.png",
+      "role": "Chrome Private / Local / Zoom-only",
+      "w": 1920,
+      "h": 1080,
+      "mode": "RGB",
+      "bytes": 661649,
+      "sha256": "ceb8735603b84144fcaad9cd45d2adfb468ce37f92fb6008c43dd53595d94cbc"
+    },
+    {
+      "path": "public/promo/frames/lower-third.png",
+      "role": "transparent lower-third overlay",
+      "w": 1920,
+      "h": 1080,
+      "mode": "RGBA",
+      "bytes": 51779,
+      "sha256": "34522a05adc6fe3062d8ede193ce4062a4595e617bf819dad6c580c23bedffdc"
+    },
+    {
+      "path": "public/promo/frames/loop-01-identity.png",
+      "role": "loop identity",
+      "w": 1920,
+      "h": 1080,
+      "sha256": "06a67f1535fa9979f97e8ec4fe07ec3f6a737b8dacb5f708b97b8510d2983d14"
+    },
+    {
+      "path": "public/promo/frames/loop-02-meeting.png",
+      "role": "loop meeting overlay still",
+      "w": 1920,
+      "h": 1080,
+      "sha256": "db2f56c055a7a6a340163c253ebcbd62bef8f6436d91974a6b8fb8b024ebf7f2"
+    },
+    {
+      "path": "public/promo/frames/loop-03-chrome.png",
+      "role": "loop chrome",
+      "w": 1920,
+      "h": 1080,
+      "sha256": "e603f1b4f9c900b40d7662ae8461d3e8907f0abf4d492a39fcddadb2b710c6b3"
+    },
+    {
+      "path": "public/promo/frames/loop-04-platforms.png",
+      "role": "loop platforms",
+      "w": 1920,
+      "h": 1080,
+      "sha256": "71d3ea76cc967d3d84f666e15212c16b1541ebd59e8fcaa28596528b7a82b015"
+    },
+    {
+      "path": "public/promo/frames/loop-05-cta.png",
+      "role": "loop CTA",
+      "w": 1920,
+      "h": 1080,
+      "sha256": "ce23c83d16d929e1cebf0b53acf22f3da90fa5d973905ad0a08f41f72b64c37e"
+    }
+  ]
+}
