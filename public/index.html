@@ -23,6 +23,8 @@
 <meta property="og:title" content="1132 Fixer for Windows, macOS and Chrome">
 <meta property="og:description" content="Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.">
 <meta property="og:image" content="/seo.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
 <meta property="og:image:alt" content="1132 Fixer download page preview">
 <meta property="og:site_name" content="1132 Fixer">
 
@@ -108,8 +110,11 @@
   }
   .app-icon {
     width: 88px; height: 88px;
-    border-radius: 24px;
+    border-radius: 0;
+    background: transparent;
     flex-shrink: 0;
+    display: block;
+    overflow: visible;
   }
   .app-name {
     font-family: 'Inter', sans-serif;
@@ -461,6 +466,21 @@
     animation: fadeIn 0.25s ease-in-out 0.15s both;
   }
   footer strong { color: var(--text-primary); }
+  footer .disclaimer {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .scope-note {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--text-secondary);
+    margin: -8px 0 16px;
+  }
 
   /* Animations */
   @keyframes fadeDown {
@@ -532,7 +552,7 @@
   </nav>
   <header>
     <div class="logo-wrap">
-      <img class="app-icon" src="/app-icon-badge.png" alt="1132 Fixer icon" onerror="this.style.display='none'">
+      <img class="app-icon" src="/app-icon-badge.png" width="88" height="88" alt="1132 Fixer icon" onerror="this.style.display='none'">
       <div>
         <div class="app-name">
           1132
@@ -670,14 +690,15 @@
       <div class="tab-panel" id="panel-chrome">
         <div class="os-label">Chrome</div>
         <div class="version-title" data-os="chrome">1132 Fixer for Chrome</div>
+        <p class="scope-note">Browser extension. User-triggered Zoom site-data cleanup in the browser. Does not repair Windows Zoom profiles.</p>
         <div class="requirements" data-os="chrome">
           <div class="req-item">
             <div class="req-label">Browser</div>
             <div class="req-value">Chrome / Edge / Brave</div>
           </div>
           <div class="req-item">
-            <div class="req-label">Platform</div>
-            <div class="req-value">Windows / macOS / Linux</div>
+            <div class="req-label">Scope</div>
+            <div class="req-value">Zoom-origin in the browser</div>
           </div>
           <div class="req-item">
             <div class="req-label">Install</div>
@@ -699,7 +720,7 @@
         <div class="dl-meta">
           <span class="dl-meta-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Verified by Google
+            Zoom-origin only
           </span>
           <span class="dl-meta-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
@@ -716,6 +737,7 @@
 
   <footer>
     <strong>Provided to you for free</strong> by OP and HT.
+    <span class="disclaimer">Independent project. Not affiliated with Zoom.</span>
   </footer>
 </div>
 
