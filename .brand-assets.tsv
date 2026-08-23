@@ -1,0 +1,10 @@
+# canonical path	shipped path
+assets/exports/website/favicon.svg	public/favicon.svg
+assets/exports/website/favicon-96x96.png	public/favicon-96x96.png
+assets/exports/website/favicon.ico	public/favicon.ico
+assets/exports/website/apple-touch-icon.png	public/apple-touch-icon.png
+assets/exports/website/web-app-manifest-192x192.png	public/web-app-manifest-192x192.png
+assets/exports/website/web-app-manifest-512x512.png	public/web-app-manifest-512x512.png
+assets/exports/website/icon.png	public/icon.png
+assets/exports/website/app-icon-badge.png	public/app-icon-badge.png
+assets/exports/website/seo.png	public/seo.png
