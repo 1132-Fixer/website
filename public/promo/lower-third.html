@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1132 Fixer — lower-third overlay</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="promo.css">
+  <style>
+    html, body { background: transparent; }
+    .stage { background: transparent; }
+    .bg-depth, .frame, .gear-watermark, .orb, .bg-grid { display: none !important; }
+    .legal { display: none; }
+    .slide { padding: 48px 72px; }
+    .top-lock {
+      position: absolute;
+      top: 48px;
+      left: 72px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .top-lock img { width: 56px; height: 56px; }
+    .top-lock span {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f5f7fa;
+    }
+    .bar {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 24px;
+      background: #0f1724;
+      border: 1px solid #33415a;
+      border-radius: 18px;
+    }
+    .bar img { width: 72px; height: 72px; }
+    .bar .title { font-size: 28px; font-weight: 700; }
+    .bar .meta { color: #9aa5b4; font-size: 18px; margin-top: 4px; }
+    .chips { margin-left: auto; }
+  </style>
+</head>
+<body>
+  <main class="stage still" id="stage">
+    <section class="slide is-active">
+      <div class="top-lock">
+        <img src="../app-icon-badge.png" width="56" height="56" alt="">
+        <span>1132 Fixer</span>
+      </div>
+      <div class="bar">
+        <img src="../app-icon-badge.png" width="72" height="72" alt="1132 Fixer">
+        <div>
+          <div class="title">1132 Fixer</div>
+          <div class="meta">Independent project. Not affiliated with Zoom.</div>
+        </div>
+        <div class="chips">
+          <span class="chip"><span class="dot"></span>Private</span>
+          <span class="chip local"><span class="dot"></span>Local</span>
+          <span class="chip zoom"><span class="dot"></span>Zoom-only</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var stage = document.getElementById('stage');
+      function scale() {
+        var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+        stage.style.transform = 'scale(' + s + ')';
+      }
+      window.addEventListener('resize', scale);
+      scale();
+    }());
+  </script>
+</body>
+</html>
