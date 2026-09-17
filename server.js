@@ -4,7 +4,7 @@ const umamiModule = require('@umami/node');
 
 const umami = umamiModule.default || umamiModule;
 
-const UMAMI_HOST_URL = process.env.UMAMI_HOST_URL || 'https://umami.primehostingdev.xyz';
+const UMAMI_HOST_URL = process.env.UMAMI_HOST_URL || 'https://umami.primehosting.dev';
 const UMAMI_API_ENDPOINT = process.env.UMAMI_API_ENDPOINT || '/data/x';
 const ANALYTICS_ENDPOINT = process.env.ANALYTICS_ENDPOINT || '/data/x';
 const UMAMI_WEBSITE_ID =
@@ -75,11 +75,19 @@ app.get([
   res.redirect(302, '/');
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+  res.vary('Accept');
 
-app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  if (req.accepts('text/markdown') && req.get('accept')?.toLowerCase().includes('text/markdown')) {
+    return res.sendFile(path.join(__dirname, 'public', 'index.md'), {
+      headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
+    });
+  }
+
+  return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
