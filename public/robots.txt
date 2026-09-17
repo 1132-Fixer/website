@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow:
+Sitemap: https://1132-fixer.xyz/sitemap.xml
