@@ -106,8 +106,6 @@
     color: var(--text-primary);
     text-align: center;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.08em;
   }
   .scam-warning-label {
     display: inline-block;
@@ -118,12 +116,12 @@
   }
   .scam-warning-title {
     margin-top: 8px;
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp(18px, 1.6vw, 20px);
     line-height: 1.3;
   }
   .scam-warning-detail {
     margin-top: 6px;
-    font-size: clamp(14px, 1.6vw, 20px);
+    font-size: clamp(14px, 1.4vw, 16px);
     line-height: 1.35;
     letter-spacing: 0.04em;
   }
@@ -131,7 +129,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 36px;
+    font-size: 45px;
     line-height: 1;
   }
   .scam-warning-icon:first-child { left: 28px; }
@@ -587,11 +585,11 @@
 <body>
 
 <div class="scam-warning" role="alert">
-  <span class="scam-warning-icon" aria-hidden="true">&#9888;&#65039;</span>
+  <span class="scam-warning-icon" aria-hidden="true">⚠︎</span>
   <span class="scam-warning-label">Warning</span>
   <p class="scam-warning-title">Beware of any paid 1132 service, it's a scam</p>
   <p class="scam-warning-detail">Do not pay anyone for any 1132 services, this is a pure scam, when you have paid there is no solution.</p>
-  <span class="scam-warning-icon" aria-hidden="true">&#9888;&#65039;</span>
+  <span class="scam-warning-icon" aria-hidden="true">⚠︎</span>
 </div>
 
 <div class="bg"></div>
