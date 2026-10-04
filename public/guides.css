@@ -1,0 +1,38 @@
+/* Tokens: design-system/tokens/{colors,spacing,radius,typography}.json */
+:root {
+  --ds-primary: #2E78D6;
+  --ds-background: #0F1724;
+  --ds-surface: #202B3D;
+  --ds-text-primary: #F5F7FA;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --radius-lg: 24px;
+  --type-display-size: 28px;
+  --type-display-lineHeight: 34px;
+  --type-heading-size: 20px;
+  --type-heading-lineHeight: 26px;
+  --type-subheading-size: 16px;
+  --type-subheading-lineHeight: 22px;
+  --type-body-size: 14px;
+  --type-body-lineHeight: 20px;
+  --website-max-width: 1280px; /* docs/05-layout.md */
+  --font-web: 'Inter', system-ui, -apple-system, sans-serif;
+}
+[hidden] { display: none !important; }
+.guide-content { width: 100%; max-width: var(--website-max-width); margin-inline: auto; }
+.guide-card { background: var(--ds-surface, var(--surface)); border-radius: var(--radius-lg); padding: var(--spacing-16); margin-block: var(--spacing-24); }
+.guide-content, .guide-card { overflow-wrap: anywhere; text-align: left; }
+.guide-content h1 { font-size: var(--type-display-size); line-height: var(--type-display-lineHeight); }
+.guide-content h2 { font-size: var(--type-heading-size); line-height: var(--type-heading-lineHeight); margin-block: var(--spacing-16); }
+.guide-content h3 { font-size: var(--type-subheading-size); line-height: var(--type-subheading-lineHeight); margin-block: var(--spacing-16) var(--spacing-8); }
+.guide-content p, .guide-content nav { margin-block: var(--spacing-12); font-size: var(--type-body-size); line-height: var(--type-body-lineHeight); }
+.guide-content a { color: var(--ds-text-primary); text-decoration: underline; }
+.guide-content nav { display: flex; flex-wrap: wrap; gap: var(--spacing-16); }
+.guide-content img { max-width: 100%; height: auto; }
+.guide-content a:focus-visible { outline: solid var(--ds-primary, var(--primary)); outline-offset: var(--spacing-4); }
+.guide-page { background: var(--ds-background); color: var(--ds-text-primary); font-family: var(--font-web); margin: var(--spacing-24); }
+
+.download-card { margin-inline: auto; }

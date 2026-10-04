@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1132 Fixer for macOS - 1132 Fixer</title>
+<meta name="description" content="macOS requirements, Zoom data resets, permissions, verification and release links.">
+<link rel="canonical" href="https://1132-fixer.xyz/macos/">
+<link rel="stylesheet" href="/guides.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "1132 Fixer for macOS", "item": "https://1132-fixer.xyz/macos/"}]}, {"@type": "SoftwareApplication", "name": "1132 Fixer for macOS", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 13+", "softwareVersion": "1.7.6", "url": "https://1132-fixer.xyz/macos/", "description": "macOS requirements, Zoom data resets, permissions, verification and release links.", "downloadUrl": "https://github.com/1132-Fixer/macos/releases/latest"}]}</script>
+</head>
+<body class="guide-page">
+<main class="guide-content">
+<nav aria-label="Breadcrumb">
+<a href="/">1132 Fixer</a> / <span>1132 Fixer for macOS</span>
+</nav>
+<h1>1132 Fixer for macOS</h1>
+<p>Latest published build: 1.7.6, released 2026-09-26. Source requires macOS 13 or later. Universal release targets Intel and Apple Silicon. Last end-to-end Zoom repair test: not verified in this audit. <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Package.swift">Minimum macOS version</a>.</p>
+<p>Download the DMG from <a href="https://github.com/1132-Fixer/macos/releases/tag/v1.7.6">macOS release notes</a>, open it, and install the app. Verify before launch: use shasum -a 256 on the DMG; codesign --verify --deep --strict on the app; and spctl --assess --type execute -v on the app. A published DMG alone does not prove current signing or notarization. Release 1.7.6 DMG digest matched on 2026-10-04. Its read-only mounted app passed codesign verification and Gatekeeper assessment (Notarized Developer ID). Keep Gatekeeper enabled. This is build authenticity evidence, not a repair test.</p>
+<p>Start Zoom closes Zoom, stops Zoom updater processes/agents, checks VPN and network state, deletes Zoom local data, flushes DNS with administrator approval, and launches Zoom through sandbox-exec. Camera and microphone permissions are requested for that launch. On macOS 13, network repair can change/reconnect the interface MAC address. Source disables MAC spoofing on macOS 14 and later. <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Sources/1132Fixer/ContentView.swift">Action sequence</a>; <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Sources/1132Fixer/ShellCommands.swift">Exact commands</a>.</p>
+<p>Deleted paths under your home Library: Application Support/zoom.us; Caches/us.zoom.xos; Preferences/us.zoom.xos.plist; Saved Application State/us.zoom.xos.savedState; and Logs/zoom.us.log*. Reset signs you out and removes local settings/logs. Back up needed state first. App removal does not restore it.</p>
+<p>Network: launch checks api.github.com for updates. Optional bug report sends title, optional email, message, system information, and diagnostics attachment to the configured endpoint; source default is 1132-bug-report-production.up.railway.app. Zoom itself uses its own network connections. <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Sources/1132Fixer/UpdateChecker.swift">Update request</a>; <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Sources/1132Fixer/BugReportService.swift">Report fields and endpoint</a>. Server retention, current release endpoint configuration, and crash-report collection remain unverified.</p>
+<p>Reversal: quit the sandboxed Zoom session and start Zoom normally. Uninstall the fixer from Applications. Restore deleted state only from a backup. Review disabled Zoom launch agents and re-enable them or reinstall Zoom if its updater does not resume; restore prior network settings if the macOS 13 network step changed them. There is no verified one-click rollback. If VPN check stops the run, review the network before retrying. If administrator approval fails, inspect the prompt and activity log.</p>
+<p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery. No current success rate or tested Zoom-version matrix is published here.</p>
+<section class="guide-card">
+<h2>Related guides</h2>
+<nav aria-label="Related guides">
+<a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/windows/">Windows fix</a> <a href="/macos/">macOS fix</a> <a href="/browser/">Browser fix</a> <a href="/how-it-works/">How it works</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
+</nav>
+</section>
+<section class="guide-card">
+<h2>References</h2>
+<p>
+<a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0069762">Zoom Error 1132 reference</a>
+</p>
+<p>Source and license details checked 2026-10-04. Runtime repair, branded browser versions, and release signing checks have separate evidence requirements.</p>
+</section>
+<section class="guide-card">
+<h2>Project screenshot</h2>
+<img src="/macos-tool.png" alt="1132 Fixer macos tool interface from project design system" width="931" height="960">
+<p>Project capture. Capture version/date and current release appearance not independently verified.</p>
+</section>
+<footer>
+<p>Independent project. Not affiliated with Zoom.</p>
+</footer>
+<p>
+<a href="/fact-sheet.md">Read canonical fact sheet and evidence gaps</a>
+</p>
+</main>
+</body>
+</html>

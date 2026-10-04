@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://1132-fixer.xyz/</loc>
-    <lastmod>2026-10-04</lastmod>
-  </url>
+<url><loc>https://1132-fixer.xyz/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/zoom-error-1132/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/windows/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/macos/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/browser/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/how-it-works/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/security/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/faq/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://1132-fixer.xyz/downloads/</loc><lastmod>2026-10-04</lastmod></url>
 </urlset>

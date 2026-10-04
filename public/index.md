@@ -1,56 +1,29 @@
 ---
-title: 1132 Fixer for Windows, macOS and Chrome
-description: Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.
-image: /seo.png
+title: Zoom Error 1132 Fixer - Free Fix for Windows, macOS & Browser
+description: Troubleshoot Zoom Error Code 1132 with free downloads for Windows, macOS and web browsers. Learn what Error 1132 is and choose the right tool for your platform.
 canonical: https://1132-fixer.xyz/
 ---
 
 # 1132 Fixer
 
-## Warning
+## Fix Zoom Error Code 1132
 
-Beware of any paid 1132 service, it's a scam
+Free downloads for Windows, macOS and browsers. Independent project. No guaranteed fix.
 
-Do not pay anyone for any 1132 services, this is a pure scam, after payment is done no solution is provided.
+Windows/browser code: MIT. macOS: public noncommercial source, not unrestricted open source.
 
-Download 1132 Fixer for Windows, macOS, or your browser.
+Store browser build 1.2.1 differs from source 1.2.7. Windows latest: 6.4.0. macOS latest: 1.7.6. Metadata checked 2026-10-04; end-to-end repair dates unverified.
 
-## Windows
+[Zoom Error 1132 guide](https://1132-fixer.xyz/zoom-error-1132/)
+[Windows fix](https://1132-fixer.xyz/windows/)
+[macOS fix](https://1132-fixer.xyz/macos/)
+[Browser fix](https://1132-fixer.xyz/browser/)
+[How it works](https://1132-fixer.xyz/how-it-works/)
+[Safety and privacy](https://1132-fixer.xyz/security/)
+[Frequently asked questions](https://1132-fixer.xyz/faq/)
+[Official downloads](https://1132-fixer.xyz/downloads/)
 
-- OS: Windows 10 or 11
-- Architecture: x64 or ARM64
-- Open source on GitHub
-- Free to download
-- `.exe` installer
-
-[Download the full installer or portable version for Windows](https://github.com/1132-Fixer/windows/releases/latest)
-
-## macOS
-
-- OS: macOS 13 Ventura or later
-- Architecture: Apple Silicon and Intel
-- Notarized by Apple
-- Open source on GitHub
-- Universal `.dmg`
-
-[Download for macOS](https://github.com/1132-Fixer/macos/releases/latest)
-
-## Browser extension
-
-User-triggered Zoom site-data cleanup in the browser. This extension does not repair Windows Zoom profiles.
-
-- Browser: Chrome, Edge, or Brave
-- Scope: Zoom origin in the browser
-- Install: Chrome Web Store
-- Price: Free
-
-[Add 1132 Fixer to Chrome](https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh)
 
 ## Support
 
-Ask other users in Discussions, or get paid support by sending us a Telegram message. Paid support costs 250 Stars ($5).
-
-- [Telegram channel](https://t.me/Team1132Fixer)
-- [Send a support message](https://t.me/Team1132Fixer?direct)
-
-Provided for free by OP and HT. Independent project. Not affiliated with Zoom.
+Downloads and community help are free. [Telegram discussions](https://t.me/Team1132Fixer). No paid support offer.

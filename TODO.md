@@ -23,8 +23,8 @@ Code deployed and public checks passed. DNSSEC registrar DS and Google sitemap p
 | sitemap.xml | Passed for current list | 200 XML; only homepage listed; homepage returned 200. |
 | Missing page | Passed for sampled path | /seo-validation-missing-20261004 returned 404. |
 | Homepage indexing directives | Passed for sampled response | HTML says index, follow. No X-Robots-Tag header found. |
-| Homepage metadata | P0 canonical fixed; P1 copy pending | Initial canonical is https://1132-fixer.xyz/. Title and description still focus on downloads. |
-| Main heading | Needs work | No H1 found in returned page source. |
+| Homepage metadata | Local P1 copy complete; production unchanged | Local title, description and canonical validated. |
+| Main heading | Local P1 fixed; production unchanged | One H1: Fix Zoom Error Code 1132. |
 | Cloudflare settings | Audited; DNSSEC gap open | MCP audit complete. Strict TLS, valid origin certificate, redirects and document cache verified. DNSSEC pending; registrar DS absent. |
 | Google/Bing indexing | Accounts inspected | Google homepage indexed and live fetch passed; indexing requested. Google sitemap processing has fetch error. Bing sitemap successful, one URL. |
 
@@ -76,50 +76,53 @@ Do not mark these complete from public HTTP results alone.
 
 ## P1 - Verify product facts before writing
 
-- [ ] Create canonical fact sheet from current source code, releases, licenses, and tests.
-- [ ] Record Windows, macOS, and browser versions, supported platforms, behavior, permissions, network requests, telemetry, licenses, source repositories, and official downloads.
-- [ ] Verify free-of-charge and open-source claims per component. Distinguish source availability from license rights.
-- [ ] Label claims as official Zoom facts, project test results, community reports, or unconfirmed hypotheses.
-- [ ] Cite current official Zoom documentation for Zoom behavior. Link project behavior claims to source or test evidence.
-- [ ] Remove unsupported claims about guaranteed fixes, success rates, or hardware bans.
-- [ ] Audit website, current/old GitHub repositories, Botify Network, Chrome Web Store, Telegram descriptions, release notes, and READMEs for conflicts.
-- [ ] Resolve paid-service warning and paid-support copy so users can understand exact scope.
-- [ ] Update obsolete documentation with deprecation notices and current links. Review before archiving old repositories.
+Evidence: [canonical fact sheet](docs/P1-fact-sheet-2026-10-04.md) and [prepared cross-property corrections](docs/P1-property-corrections-2026-10-04.md). Local site implementation checked; no deployment claimed. User requested paid-support removal, hidden warning banner, and removal of the Official guidance block. Unknown compatibility and external publication gates remain unchecked.
+
+- [x] Create canonical fact sheet from current source code, releases, licenses, and tests.
+- [x] Record Windows, macOS, and browser versions, supported platforms, behavior, permissions, network requests, telemetry, licenses, source repositories, and official downloads.
+- [x] Verify free-of-charge and open-source claims per component. Distinguish source availability from license rights.
+- [x] Label claims as official Zoom facts, project test results, community reports, or unconfirmed hypotheses.
+- [x] Cite current official Zoom documentation for Zoom behavior. Link project behavior claims to source or test evidence.
+- [ ] Remove unsupported claims about guaranteed fixes, success rates, or hardware bans. **Partial:** removed from website content; external legacy/store claims remain open.
+- [ ] Audit website, current/old GitHub repositories, Botify Network, Chrome Web Store, Telegram descriptions, release notes, and READMEs for conflicts. **Partial:** current sources, live store/Botify page, old Windows README and public Telegram profile checked. Full Telegram/release-history audit remains open.
+- [x] Resolve paid-service warning and paid-support copy so users can understand exact scope.
+- [ ] Update obsolete documentation with deprecation notices and current links. Review before archiving old repositories. **Partial:** website Markdown corrected; external deprecation/correction text prepared in dated audit. No repository archived.
 
 ## P1 - Homepage
 
 Consult design-system/ before visual changes. Preserve supplied warning copy and current style unless change is requested.
 
-- [ ] Use title: "Zoom Error 1132 Fixer - Free Fix for Windows, macOS & Browser", after verifying claims.
-- [ ] Use meta description: "Troubleshoot Zoom Error Code 1132 with free, open-source tools for Windows, macOS and web browsers. Learn what Error 1132 is and choose the right fix for your platform.", after verifying claims.
-- [ ] Add one H1: "Fix Zoom Error Code 1132".
-- [ ] Add short factual introduction explaining toolkit and supported platforms.
-- [ ] Follow content order: introduction, platform selector, Error 1132 explanation, platform cards, how it works, safety, 5-8 FAQs, source code, downloads, official resources.
-- [ ] Make path clear: understand error, choose platform, learn changes, verify safety, download correct tool.
-- [ ] Link all core pages with descriptive normal anchors. Keep platform switching and download actions working.
+- [x] Use title: "Zoom Error 1132 Fixer - Free Fix for Windows, macOS & Browser", after verifying claims.
+- [x] Use accurate meta description after verifying claims. **Adjusted:** macOS is noncommercial source-available, so the proposed all-platform "open-source tools" claim is not used.
+- [x] Add one H1: "Fix Zoom Error Code 1132".
+- [x] Add short factual introduction explaining toolkit and supported platforms.
+- [x] Follow content order: introduction, platform selector, Error 1132 explanation, platform cards, how it works, safety, 5-8 FAQs, source code, downloads, official resources.
+- [x] Make path clear: understand error, choose platform, learn changes, verify safety, download correct tool.
+- [x] Link all core pages with descriptive normal anchors. Keep platform switching and download actions working.
 
 ## P1 - Dedicated pages
 
 Give each page distinct content, title, H1, canonical, references, and useful internal links.
 Show current version, release date, last tested date, and supported platforms where relevant.
 
-- [ ] /zoom-error-1132/: define error, symptoms, official guidance, possible causes, first steps, platform fixes, reinstall/profile/browser-data options, limits, safety, FAQs, and references.
-- [ ] /windows/: verify supported versions, installation, administrator access, exact changes, helper accounts, credentials and DPAPI if used, network requests, telemetry, rollback, limits, troubleshooting, screenshots, releases, source, and checksums.
-- [ ] /macos/: verify supported versions, installation, signing/notarization and user verification steps, permissions, system changes, network requests, privacy, reversal, limits, troubleshooting, source, releases, and checksums.
-- [ ] /browser/: verify Chrome/Edge/Brave support, store link, accessed/changed site data, cookie relevance, permissions, privacy, source, manual alternative, limits, and screenshots.
-- [ ] /how-it-works/: for each platform explain initial state, actions, files/settings/accounts/data touched, permissions, network requests, final state, and reversal. Link source evidence.
-- [ ] /security/: explain source licenses, official downloads, signing, notarization, checksums/signatures, permissions, destination domains, transmitted data, telemetry, crash reports, identifiers, IP/log handling, reversal, and security reporting.
-- [ ] /faq/: answer error meaning/cause, permanence, fixes, reinstalling Windows/Zoom, browser issues, alternate Windows accounts, product purpose, cost, licenses, safety, data collection, Zoom changes, affiliation, and downloads. Answer directly first.
-- [ ] /downloads/: show each product's latest version, release date, supported system, official download, source, checksum/signature, and release notes. Clearly separate old builds.
-- [ ] Link homepage to all eight pages. Link platform pages to guide, security, how-it-works, and downloads.
+- [x] /zoom-error-1132/: define error, symptoms, possible causes, first steps, platform fixes, reinstall/profile/browser-data options, limits, safety, FAQs, and references. Official guidance block omitted at user request.
+- [ ] /windows/: verify supported versions, installation, administrator access, exact changes, helper accounts, credentials and DPAPI if used, network requests, telemetry, rollback, limits, troubleshooting, screenshots, releases, source, and checksums. **Partial:** page exists with source/release requirements, permissions, DPAPI, rollback, screenshot and checksums. Physical Windows/Zoom compatibility and exact packaged support endpoint remain unverified.
+- [ ] /macos/: verify supported versions, installation, signing/notarization and user verification steps, permissions, system changes, network requests, privacy, reversal, limits, troubleshooting, source, releases, and checksums. **Partial:** page exists; 1.7.6 digest, code signature, Gatekeeper and DMG ticket validated. Live Zoom repair and full reversal not tested.
+- [ ] /browser/: verify Chrome/Edge/Brave support, store link, accessed/changed site data, cookie relevance, permissions, privacy, source, manual alternative, limits, and screenshots. **Partial:** page, real source popup screenshot and six automated suites complete. Store binary and branded Chrome/Edge/Brave compatibility remain unverified.
+- [x] /how-it-works/: for each platform explain initial state, actions, files/settings/accounts/data touched, permissions, network requests, final state, and reversal. Link source evidence.
+- [x] /security/: explain source licenses, official downloads, signing, notarization, checksums/signatures, permissions, destination domains, transmitted data, telemetry, crash reports, identifiers, IP/log handling, reversal, and security reporting.
+- [x] /faq/: answer error meaning/cause, permanence, fixes, reinstalling Windows/Zoom, browser issues, alternate Windows accounts, product purpose, cost, licenses, safety, data collection, Zoom changes, affiliation, and downloads. Answer directly first.
+- [x] /downloads/: show each product's latest version, release date, supported system, official download, source, checksum/signature, and release notes. Clearly separate old builds.
+- [x] Link homepage to all eight pages. Link platform pages to guide, security, how-it-works, and downloads.
 
 ## P1 - Structured data and project identity
 
-- [ ] Add accurate visible-content JSON-LD: WebSite, project Organization if appropriate, platform SoftwareApplication, and BreadcrumbList on internal pages.
-- [ ] Render visible breadcrumbs where used. Validate markup. Do not invent ratings, reviews, counts, prices, authors, or compatibility.
-- [ ] Use exact brand "1132 Fixer" across official properties. Link official site, source repositories, store listing, and project profiles together.
-- [ ] Add About information: maintainers who consent to public names, purpose, history, source, bug reports, and security reports.
-- [ ] Keep clear independent-project and Zoom trademark/affiliation statement. Verify company wording before publication.
+- [x] Add accurate visible-content JSON-LD: WebSite, project Organization if appropriate, platform SoftwareApplication, and BreadcrumbList on internal pages.
+- [x] Render visible breadcrumbs where used. Validate markup. Do not invent ratings, reviews, counts, prices, authors, or compatibility.
+- [ ] Use exact brand "1132 Fixer" across official properties. Link official site, source repositories, store listing, and project profiles together. **Partial:** website uses current project links. External store/Botify/legacy copy corrections are prepared, not published.
+- [x] Add About information: maintainers who consent to public names, purpose, history, source, bug reports, and security reports.
+- [x] Keep clear independent-project and Zoom trademark/affiliation statement. Verify company wording before publication.
+
 
 ## P2 - Evidence, usability, and authority
 
@@ -160,7 +163,7 @@ Show current version, release date, last tested date, and supported platforms wh
 
 - [x] Cloudflare MCP audit complete; each relevant setting has evidence and unresolved gaps are explicit. See dated P0 audit; DNSSEC gate remains open.
 - [ ] Google can crawl/index intended canonical pages; Search Console has no unexplained blocking issue.
-- [ ] Homepage identifies product and error; all eight detailed pages exist and are internally linked.
+- [x] Homepage identifies product and error; all eight detailed pages exist and are internally linked. **Local implementation only.**
 - [ ] Technical, security, license, and compatibility claims match current evidence across official properties.
 - [ ] Users can verify source, downloads, permissions, and build authenticity.
 - [ ] Structured data matches visible content; original test evidence and primary-source citations are published.
