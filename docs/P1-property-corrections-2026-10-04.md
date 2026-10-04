@@ -10,7 +10,7 @@ These changes are prepared, not published. No old repository is archived.
 >
 > Old builds used a different helper-account model. Do not treat the old static password or administrator-helper instructions as current guidance. Current source uses a standard user and fresh random password sealed with Windows DPAPI. Fix now resets helper profile data; back up required data first.
 >
-> Error 1132 does not establish a device ban. Follow official Zoom reporting guidance: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0069762. No guaranteed fix or measured success rate is claimed.
+> Long-term users report a device ban linked to terms violations that cannot be reversed, with 1132 Fixer providing a workaround. This is a user report, not an official Zoom diagnosis. Zoom reference: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0069762. No guaranteed fix or measured success rate is claimed.
 >
 > Historical releases remain here for reference. Do not install them as an alternative to the current supported release.
 

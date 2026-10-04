@@ -9,8 +9,8 @@ This sheet separates published artifacts, current source, automated checks, and 
 - **Official Zoom fact:** Zoom's [1132 article](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0069762) asks users to update, reproduce, report, and confirm by email. It does not establish a universal cause.
 - **Project source evidence:** actions and permissions below were read from source. Source behavior is not proof of behavior in an older published binary.
 - **Project test evidence:** linked CI runs passed. They are not a current end-to-end Zoom repair test or proof of a success rate.
-- **Community report:** anecdotal fixes and cause reports are not used as product guarantees.
-- **Unconfirmed hypothesis:** local profile or cookie state can be a troubleshooting target. Hardware/device bans, universal cookie causes, permanent fixes and numerical success rates are not established.
+- **Community report:** project owner supplied long-term user reports: Error 1132 is described as a device ban linked to terms violations, cannot be reversed, and has a 1132 Fixer workaround. Reported symptom: Zoom desktop app shows 1132 when joining any meeting or signing in on the affected device. Published wording attributes these claims to users; no independent cause or exclusivity claim is made.
+- **Unconfirmed hypothesis:** local profile or cookie state can be a troubleshooting target. Device-ban reports above are attributed to users, not established as official Zoom facts. Universal cookie causes, permanent fixes and numerical success rates are not established.
 
 ## Source identity
 
