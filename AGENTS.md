@@ -17,6 +17,11 @@
 - Preserve existing visual style unless asked to redesign.
 - Do not add new dependencies unless necessary and explicitly justified.
 - Use ASCII by default in code/content.
+- Always commit task changes after all tests and required checks pass. Include only files changed for the task.
+
+## Infrastructure
+- Use Cloudflare MCP to check and fix domain issues, including DNS settings.
+- Use Coolify MCP to check and fix hosting issues, including deployments and server configuration.
 
 ## Design System
 - `design-system/` is a git submodule (`https://github.com/1132-fixer/design-system.git`) and the source of truth for all design decisions.
