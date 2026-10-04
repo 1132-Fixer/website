@@ -1,0 +1,92 @@
+/* Uses design-system tokens exposed by guides.css and index.html.
+   Native details/summary provide the requested accordion behavior. */
+.home-content {
+  max-width: 620px; /* Matches the existing download panel. */
+}
+.home-intro {
+  text-align: center;
+  margin-top: var(--spacing-16);
+}
+.home-intro p,
+.home-detail-body,
+.home-safety p {
+  color: var(--text-secondary);
+}
+.home-intro .scope-note {
+  margin-top: var(--spacing-16);
+}
+.home-content .dl-btn {
+  text-decoration: none;
+}
+.home-section {
+  margin-top: var(--spacing-48);
+}
+.home-section > h2 {
+  margin-bottom: var(--spacing-16);
+}
+.home-safety {
+  margin-top: var(--spacing-24);
+  padding: var(--spacing-16);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+.home-safety h2 {
+  font-size: var(--type-subheading-size);
+  line-height: var(--type-subheading-lineHeight);
+  margin: 0;
+}
+.home-safety p {
+  margin-bottom: 0;
+}
+.home-detail {
+  border-bottom: thin solid var(--border);
+}
+.home-detail summary {
+  padding: var(--spacing-16) var(--spacing-4);
+  cursor: pointer;
+  font-size: var(--type-subheading-size);
+  line-height: var(--type-subheading-lineHeight);
+  font-weight: 600; /* typography.scale.subheading.weight */
+  transition: color var(--motion-fast) ease-out;
+}
+.home-detail summary::marker {
+  color: var(--text-secondary);
+}
+.home-detail summary:hover,
+.home-detail[open] > summary {
+  color: var(--primary);
+}
+.home-detail summary:focus-visible,
+.home-content button:focus-visible {
+  outline: solid var(--primary);
+  outline-offset: var(--spacing-4);
+}
+.home-detail-body {
+  padding: 0 var(--spacing-24) var(--spacing-16);
+}
+.home-detail-body > :first-child {
+  margin-top: 0;
+}
+.home-detail-body > :last-child {
+  margin-bottom: 0;
+}
+.home-fact-sheet {
+  padding-top: var(--spacing-8);
+  color: var(--text-secondary);
+}
+:root {
+  --spacing-48: 48px; /* spacing.48 */
+  --motion-fast: 150ms; /* docs/07-motion.md: fast */
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-detail summary { transition: none; }
+  .page *, .page *::after { animation: none; transition: none; }
+}
+@media (max-width: 640px) { /* docs/05-layout.md: mobile */
+  .logo-wrap { flex-direction: row; gap: var(--spacing-16); }
+  .top-menu .menu-btn { flex: 1 1 auto; width: auto; }
+  .top-menu { flex-wrap: wrap; }
+  .home-content .requirements { grid-template-columns: 1fr 1fr; }
+  .home-content .req-item { padding: var(--spacing-12); }
+  .home-content .tab-panels { padding: var(--spacing-16); }
+}
