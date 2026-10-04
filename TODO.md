@@ -9,7 +9,8 @@ Search engines decide indexing, ranking, and citations. No result is guaranteed.
 
 Checked boxes below mean a specific check passed. They do not mean a whole phase is complete.
 Public HTTP checks do not prove private Cloudflare settings or Google indexing.
-This file is a work list. Website and domain changes are still pending.
+P0 work and evidence: [2026-10-04 audit](docs/P0-audit-2026-10-04.md).
+Code deployed and public checks passed. DNSSEC registrar DS and Google sitemap processing remain open.
 
 ## Current evidence
 
@@ -17,15 +18,15 @@ This file is a work list. Website and domain changes are still pending.
 | --- | --- | --- |
 | Homepage | Passed | HTTPS GET returned 200 and HTML. |
 | HTTP to HTTPS | Passed | Apex HTTP returned 301 to HTTPS apex, then 200. |
-| Preferred hostname | Passed with gap | HTTPS www returned 301 to apex. HTTP www used two redirects. |
+| Preferred hostname | Passed | HTTP/HTTPS www now use one 301 to HTTPS apex; paths and queries preserved. |
 | robots.txt | Passed | 200; allows crawling; names https://1132-fixer.xyz/sitemap.xml. |
 | sitemap.xml | Passed for current list | 200 XML; only homepage listed; homepage returned 200. |
 | Missing page | Passed for sampled path | /seo-validation-missing-20261004 returned 404. |
 | Homepage indexing directives | Passed for sampled response | HTML says index, follow. No X-Robots-Tag header found. |
-| Homepage metadata | Needs work | Title and description focus on downloads. Canonical in source is relative (/). |
+| Homepage metadata | P0 canonical fixed; P1 copy pending | Initial canonical is https://1132-fixer.xyz/. Title and description still focus on downloads. |
 | Main heading | Needs work | No H1 found in returned page source. |
-| Cloudflare settings | Unverified | No Cloudflare MCP tool available. Plugin search found no connector. |
-| Google/Bing indexing | Unverified | No Search Console or Bing account inspection performed. |
+| Cloudflare settings | Audited; DNSSEC gap open | MCP audit complete. Strict TLS, valid origin certificate, redirects and document cache verified. DNSSEC pending; registrar DS absent. |
+| Google/Bing indexing | Accounts inspected | Google homepage indexed and live fetch passed; indexing requested. Google sitemap processing has fetch error. Bing sitemap successful, one URL. |
 
 ## P0 - Cloudflare validation and crawl access
 
@@ -33,45 +34,45 @@ Use Cloudflare MCP for configuration checks. Read settings before changing them.
 Record zone ID, setting/rule name, current value, result, and check date.
 Do not mark these complete from public HTTP results alone.
 
-- [ ] Connect Cloudflare MCP and locate exact 1132-fixer.xyz zone.
-- [ ] Confirm zone is active and registrar delegation matches assigned nameservers.
-- [ ] Check apex and www DNS records against current hosting target. Check proxy state and remove conflicts only after proving correct target.
-- [ ] Check DNSSEC status and matching registrar DS record if DNSSEC is enabled.
-- [ ] Verify edge certificate is active and covers apex and www.
-- [ ] Verify SSL/TLS mode is Full (strict), with a valid origin certificate. Do not use Flexible.
-- [ ] Inspect HTTPS and hostname redirect rules, including legacy Page Rules, Redirect Rules, and Workers. Remove conflicting rules if found.
+- [x] Connect Cloudflare MCP and locate exact 1132-fixer.xyz zone.
+- [x] Confirm zone is active and registrar delegation matches assigned nameservers.
+- [x] Check apex and www DNS records against current hosting target. Check proxy state and remove conflicts only after proving correct target.
+- [ ] Check DNSSEC status and matching registrar DS record if DNSSEC is enabled. **Blocked:** Cloudflare pending; registrar DS absent. Exact DS values in audit. Registrar access needed.
+- [x] Verify edge certificate is active and covers apex and www.
+- [x] Verify SSL/TLS mode is Full (strict), with a valid origin certificate. Do not use Flexible.
+- [x] Inspect HTTPS and hostname redirect rules, including legacy Page Rules, Redirect Rules, and Workers. Remove conflicting rules if found.
 - [x] Public check: HTTP apex redirects permanently to HTTPS apex.
 - [x] Public check: HTTPS www redirects permanently to HTTPS apex.
-- [ ] Reduce HTTP www to one permanent redirect to https://1132-fixer.xyz/. Preserve paths and query strings.
-- [ ] Inspect WAF, bot controls, rate limits, security rules, and managed robots behavior for crawler blocks or challenges.
-- [ ] Confirm intended search and AI search crawlers can fetch public pages and assets. Record separate policy for AI training crawlers; do not assume search access requires training access.
-- [ ] Inspect cache rules for stale robots.txt, sitemap.xml, HTML, and incorrect content types.
-- [ ] Verify cache handling keeps HTML and Markdown responses separate when Accept varies. Check origin negotiation and Cloudflare cache behavior together.
-- [ ] Check compression, static-asset caching, and HTTP/2 or HTTP/3 support. Enable suitable options only when supported by current hosting.
-- [ ] Review Rocket Loader and other script transforms for rendering failures if enabled.
-- [ ] Record Search Console/Bing DNS verification records without exposing token values. DNS record presence alone does not prove account verification.
-- [ ] Recheck public URLs after any approved configuration change. Confirm no redirect loops, crawler challenges, or stale content.
+- [x] Reduce HTTP www to one permanent redirect to https://1132-fixer.xyz/. Preserve paths and query strings.
+- [x] Inspect WAF, bot controls, rate limits, security rules, and managed robots behavior for crawler blocks or challenges.
+- [x] Confirm intended search and AI search crawlers can fetch public pages and assets. Record separate policy for AI training crawlers; do not assume search access requires training access.
+- [x] Inspect cache rules for stale robots.txt, sitemap.xml, HTML, and incorrect content types.
+- [x] Verify cache handling keeps HTML and Markdown responses separate when Accept varies. Check origin negotiation and Cloudflare cache behavior together.
+- [x] Check compression, static-asset caching, and HTTP/2 or HTTP/3 support. Enable suitable options only when supported by current hosting.
+- [x] Review Rocket Loader and other script transforms for rendering failures if enabled.
+- [x] Record Search Console/Bing DNS verification records without exposing token values. DNS record presence alone does not prove account verification.
+- [x] Recheck public URLs after any approved configuration change. Confirm no redirect loops, crawler challenges, or stale content.
 
 ## P0 - Indexing and URL rules
 
-- [ ] Add Google Search Console Domain property for 1132-fixer.xyz. Complete DNS verification through Cloudflare MCP using exact supplied record.
-- [ ] Inspect homepage in Search Console: crawl access, rendered content, indexing status, and Google-selected canonical.
-- [ ] Investigate exclusions: crawled/discovered but not indexed, duplicates, noindex, robots blocks, soft 404s, redirect errors, and server errors.
+- [x] Add Google Search Console Domain property for 1132-fixer.xyz. Complete DNS verification through Cloudflare MCP using exact supplied record.
+- [x] Inspect homepage in Search Console: crawl access, rendered content, indexing status, and Google-selected canonical.
+- [x] Investigate exclusions: crawled/discovered but not indexed, duplicates, noindex, robots blocks, soft 404s, redirect errors, and server errors.
 - [x] Confirm public robots.txt exists and allows intended crawling.
 - [x] Confirm public sitemap.xml exists and currently lists a canonical 200 homepage.
 - [x] Check sampled production homepage has no noindex directive.
 - [x] Confirm sampled missing page returns real HTTP 404.
-- [ ] Set absolute homepage canonical in initial HTML: https://1132-fixer.xyz/.
-- [ ] Define HTTPS, apex hostname, lowercase paths, and trailing-slash rules. Use permanent redirects for alternate URLs.
-- [ ] Add self-referencing absolute canonical to each new indexable page.
-- [ ] Keep important text, metadata, and normal anchor links in initial HTML. Preserve Express static architecture.
-- [ ] Review existing Markdown response for accurate content, Accept quality handling, and Vary: Accept behavior. Keep HTML as browser default.
-- [ ] Expand sitemap only after each new canonical page returns 200 and is indexable. Exclude redirects, errors, query duplicates, and noindex pages.
-- [ ] Update lastmod only when page content changes. Automate from actual content changes if practical.
-- [ ] Submit sitemap to Google. Request indexing after deployment. Monitor Pages and Performance reports.
-- [ ] Register and verify Bing Webmaster Tools. Submit sitemap.
-- [ ] Implement IndexNow key verification and change notifications for added, changed, or removed URLs. Verify submission response; do not resend unchanged pages.
-- [ ] Monitor production failures over time. One successful request does not prove absence of intermittent 5xx errors.
+- [x] Set absolute homepage canonical in initial HTML: https://1132-fixer.xyz/.
+- [x] Define HTTPS, apex hostname, lowercase paths, and trailing-slash rules. Use permanent redirects for alternate URLs.
+- [x] Require self-referencing absolute canonical for each new indexable page. IndexNow script checks this gate. No new page added in P0; dedicated pages remain P1.
+- [x] Keep important text, metadata, and normal anchor links in initial HTML. Preserve Express static architecture.
+- [x] Review existing Markdown response for accurate content, Accept quality handling, and Vary: Accept behavior. Keep HTML as browser default.
+- [x] Expand sitemap only after each new canonical page returns 200 and is indexable. Exclude redirects, errors, query duplicates, and noindex pages.
+- [x] Update lastmod only when page content changes. Automate from actual content changes if practical.
+- [ ] Submit sitemap to Google. Request indexing after deployment. Monitor Pages and Performance reports. **Partial:** HTTPS sitemap submitted; homepage live test passed and indexing request completed. Google sitemap fetch report remains unresolved.
+- [x] Register and verify Bing Webmaster Tools. Submit sitemap.
+- [x] Implement IndexNow key verification and change notifications for added, changed, or removed URLs. Verify submission response; do not resend unchanged pages. Public key verified; one homepage notification returned 202 (key validation pending). Second run sent nothing.
+- [x] Set up monitoring for production failures over time. Hourly public health workflow installed; first manual run passed. Ongoing results need review. One successful request does not prove absence of intermittent 5xx errors.
 
 ## P1 - Verify product facts before writing
 
@@ -157,7 +158,7 @@ Show current version, release date, last tested date, and supported platforms wh
 
 ## Completion criteria
 
-- [ ] Cloudflare MCP audit complete; each relevant setting has evidence and unresolved gaps are explicit.
+- [x] Cloudflare MCP audit complete; each relevant setting has evidence and unresolved gaps are explicit. See dated P0 audit; DNSSEC gate remains open.
 - [ ] Google can crawl/index intended canonical pages; Search Console has no unexplained blocking issue.
 - [ ] Homepage identifies product and error; all eight detailed pages exist and are internally linked.
 - [ ] Technical, security, license, and compatibility claims match current evidence across official properties.
