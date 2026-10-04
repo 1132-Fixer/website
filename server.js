@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const umamiModule = require('@umami/node');
 
 const umami = umamiModule.default || umamiModule;
@@ -30,6 +31,25 @@ umami.send = function sendToCustomEndpoint(payload, type = 'event') {
 };
 
 app.use(express.json());
+
+// Public paths use lowercase. Documents keep a trailing slash; files do not.
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+  let canonicalPath = req.path.toLowerCase();
+  if (['/index.html', '/index.md', '/discussion-mac', '/discussion-windows',
+    '/discussion-ios', '/discussion-android'].includes(canonicalPath.replace(/\/$/, ''))) {
+    canonicalPath = '/';
+  } else if (path.extname(canonicalPath)) {
+    canonicalPath = canonicalPath.replace(/\/$/, '');
+  } else if (!canonicalPath.endsWith('/') &&
+    fs.existsSync(path.join(__dirname, 'public', canonicalPath, 'index.html'))) {
+    canonicalPath += '/';
+  }
+  if (canonicalPath !== req.path) {
+    return res.redirect(301, canonicalPath + req.originalUrl.slice(req.path.length));
+  }
+  return next();
+});
 
 app.get('/x.js', (_req, res) => {
   // Redirect instead of proxying the script body to avoid upstream access checks
@@ -66,19 +86,15 @@ app.post(ANALYTICS_ENDPOINT, async (req, res) => {
   return res.status(204).end();
 });
 
-app.get([
-  '/discussion-mac',
-  '/discussion-windows',
-  '/discussion-ios',
-  '/discussion-android',
-], (_req, res) => {
-  res.redirect(302, '/');
-});
-
 app.get('/', (req, res) => {
   res.vary('Accept');
+  // Cloudflare does not generally key its cache on Accept.
+  res.set('Cache-Control', 'no-store');
 
-  if (req.accepts('text/markdown') && req.get('accept')?.toLowerCase().includes('text/markdown')) {
+  const format = req.accepts(['text/html', 'text/markdown']);
+  if (!format) return res.status(406).send('Supported formats: text/html, text/markdown.');
+
+  if (format === 'text/markdown') {
     return res.sendFile(path.join(__dirname, 'public', 'index.md'), {
       headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
     });
@@ -87,7 +103,15 @@ app.get('/', (req, res) => {
   return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    if (/\.(html|md|xml|txt)$/.test(filePath)) {
+      res.set('Cache-Control', 'no-cache');
+    } else {
+      res.set('Cache-Control', 'public, max-age=86400');
+    }
+  },
+}));
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

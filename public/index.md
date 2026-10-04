@@ -2,9 +2,16 @@
 title: 1132 Fixer for Windows, macOS and Chrome
 description: Get the latest installer for Windows and macOS, the Chrome extension, system requirements, and quick setup details.
 image: /seo.png
+canonical: https://1132-fixer.xyz/
 ---
 
 # 1132 Fixer
+
+## Warning
+
+Beware of any paid 1132 service, it's a scam
+
+Do not pay anyone for any 1132 services, this is a pure scam, after payment is done no solution is provided.
 
 Download 1132 Fixer for Windows, macOS, or your browser.
 

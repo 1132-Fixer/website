@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="1132 Fixer" />
 <link rel="manifest" href="/site.webmanifest" />
-<link rel="canonical" href="/">
+<link rel="canonical" href="https://1132-fixer.xyz/">
 <link rel="me" href="https://t.me/Team1132Fixer">
 
 <meta property="og:type" content="website">
@@ -885,12 +885,6 @@
     ios: 'discussions-ios',
     android: 'discussions-android'
   };
-  const DISCUSSION_CANONICAL_URLS = {
-    mac: 'https://1132-fixer.xyz/discussion-mac',
-    windows: 'https://1132-fixer.xyz/discussion-windows',
-    ios: 'https://1132-fixer.xyz/discussion-ios',
-    android: 'https://1132-fixer.xyz/discussion-android'
-  };
   let activeDiscussionOS = 'mac';
 
   function switchTab(os) {
@@ -934,7 +928,6 @@
     document.querySelectorAll('.discussion-tabs .tab').forEach(t => t.classList.remove('active'));
     const tab = document.getElementById('discussion-tab-' + os);
     if (tab) tab.classList.add('active');
-    updateCanonicalUrl(DISCUSSION_CANONICAL_URLS[os]);
     loadDiscussionWidget(DISCUSSION_PAGE_IDS[os]);
   }
 
@@ -954,16 +947,6 @@
     script.setAttribute('data-colorful', '1');
     script.setAttribute('data-dark', '1');
     widget.appendChild(script);
-  }
-
-  function updateCanonicalUrl(href) {
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = href;
   }
 
   document.getElementById('discussion-modal').addEventListener('click', event => {
