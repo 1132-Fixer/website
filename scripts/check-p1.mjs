@@ -5,10 +5,15 @@ const canonicalOrigin = 'https://1132-fixer.xyz';
 const paths = ['/', '/zoom-error-1132/', '/windows/', '/macos/', '/browser/',
   '/how-it-works/', '/security/', '/faq/', '/downloads/'];
 const internal = new Set();
+const assertNoFixedVersion = (content, path) => {
+  const text = content.replace(/<svg\b[\s\S]*?<\/svg>/g, '');
+  assert.doesNotMatch(text, /\b(?:v)?\d+\.\d+\.\d+(?:\.\d+)?\b/, `${path}: no fixed product versions`);
+};
 for (const path of paths) {
   const response = await fetch(origin + path, { redirect: 'manual' });
   assert.equal(response.status, 200, path);
   const html = await response.text();
+  assertNoFixedVersion(html, path);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${path}: one H1`);
   assert.match(html, /<title>[^<]+<\/title>/);
   assert.match(html, /<meta name="description" content="[^"]+">/);
@@ -30,7 +35,7 @@ for (const path of paths) {
     assert.ok(html.includes('aria-label="Breadcrumb"'));
     if (['/windows/', '/macos/', '/browser/'].includes(path)) {
       const app = data['@graph'].find(node => node['@type'] === 'SoftwareApplication');
-      assert.ok(html.includes(app.softwareVersion.split(' ')[0]));
+      assert.equal(app.softwareVersion, undefined, 'Version must load from API');
       assert.ok(app.downloadUrl.startsWith('https://'));
       assert.equal(app.aggregateRating, undefined);
       assert.equal(app.offers, undefined);
@@ -40,6 +45,11 @@ for (const path of paths) {
   for (const [, digest] of html.matchAll(/<code>([a-f0-9]+)<\/code>/g)) {
     assert.equal(digest.length, 64, `${path}: SHA-256 length`);
   }
+}
+for (const path of ['/index.md', '/fact-sheet.md', '/promo/index.html', '/promo/chrome.html']) {
+  const response = await fetch(origin + path);
+  assert.equal(response.status, 200, path);
+  assertNoFixedVersion(await response.text(), path);
 }
 for (const path of internal) {
   const response = await fetch(origin + path, { redirect: 'manual' });

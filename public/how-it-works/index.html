@@ -38,8 +38,8 @@
 <section class="guide-card">
 <h2>Browser: explicit Zoom cleanup</h2>
 <p>Initial state: active Zoom tab with browser cookies/site data. Detection clears nothing.</p>
-<p>Action: press FIX ZOOM. Store 1.2.1 removes Zoom cookies; source 1.2.7 additionally clears active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Then reload active tab. Other websites remain outside intended scope.</p>
-<p>Permissions: cookies, activeTab, Zoom host access; source 1.2.7 also scripting. Cleanup has no direct network request; tab reload loads Zoom resources. Optional source report page contacts project support service.</p>
+<p>Action: press FIX ZOOM. Store removes Zoom cookies; source additionally clears active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Then reload active tab. Other websites remain outside intended scope.</p>
+<p>Permissions: cookies, activeTab, Zoom host access; source also scripting. Cleanup has no direct network request; tab reload loads Zoom resources. Optional source report page contacts project support service.</p>
 <p>Final state: Zoom browser sign-in state removed. Reversal: sign in again or remove extension. Deleted data cannot be restored by uninstalling. Cleanup status is not proof of Error 1132 recovery.</p>
 <p>
 <a href="/browser/">Store/source differences and browser instructions</a> | <a href="https://github.com/1132-Fixer/browser/tree/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup source</a>

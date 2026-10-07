@@ -12,7 +12,7 @@ Free downloads for Windows, macOS and browsers. Independent project. No guarante
 
 Windows/browser code: MIT. macOS: public noncommercial source, not unrestricted open source.
 
-Store browser build 1.2.1 differs from source 1.2.7. Windows latest: 6.4.0. macOS latest: 1.7.6. Metadata checked 2026-10-04; end-to-end repair dates unverified.
+Store and source browser builds can differ. Current release data comes from GitHub API on the [download page](/downloads/). End-to-end repair dates remain unverified.
 
 [Zoom Error 1132 guide](https://1132-fixer.xyz/zoom-error-1132/)
 [Windows fix](https://1132-fixer.xyz/windows/)

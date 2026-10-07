@@ -7,7 +7,8 @@
 <meta name="description" content="Compare Chrome store cookie cleanup with current browser source, permissions and limits.">
 <link rel="canonical" href="https://1132-fixer.xyz/browser/">
 <link rel="stylesheet" href="/guides.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "1132 Fixer for Chrome", "item": "https://1132-fixer.xyz/browser/"}]}, {"@type": "SoftwareApplication", "name": "1132 Fixer for Chrome", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Chrome", "softwareVersion": "1.2.1 (Chrome store)", "url": "https://1132-fixer.xyz/browser/", "description": "Compare Chrome store cookie cleanup with current browser source, permissions and limits.", "downloadUrl": "https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "1132 Fixer for Chrome", "item": "https://1132-fixer.xyz/browser/"}]}, {"@type": "SoftwareApplication", "name": "1132 Fixer for Chrome", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Chrome", "url": "https://1132-fixer.xyz/browser/", "description": "Compare Chrome store cookie cleanup with current browser source, permissions and limits.", "downloadUrl": "https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh"}]}</script>
+<script src="/release-data.js" defer></script>
 </head>
 <body class="guide-page">
 <main class="guide-content">
@@ -15,8 +16,8 @@
 <a href="/">1132 Fixer</a> / <span>1132 Fixer for Browser</span>
 </nav>
 <h1>1132 Fixer for Browser</h1>
-<p>Store package: 1.2.1, updated 2026-08-06, from <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: 1.2.7, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds.</p>
-<p>Store 1.2.1 describes cookie-only cleanup with cookies and activeTab permissions plus zoom.us/zoom.com host access. Current source 1.2.7 adds scripting to clear active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Do not assume source features are present in the store build. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/apps/extensions/chrome/manifest.json">Current manifest</a>.</p>
+<p>Store package: see <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: <span data-release-version="browser">Loading...</span>, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds.</p>
+<p>Store describes cookie-only cleanup with cookies and activeTab permissions plus zoom.us/zoom.com host access. Current source adds scripting to clear active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Do not assume source features are present in the store build. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/apps/extensions/chrome/manifest.json">Current manifest</a>.</p>
 <p>Source requires Chrome 114+. Edge and Brave have Chromium package targets; exact branded versions remain unverified. Brave users can use the Chrome store package; Edge has no verified Add-ons listing. Firefox has separate source packaging; Safari is not implemented. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/docs/platforms/compatibility-matrix.md">Source compatibility matrix</a>.</p>
 <p>Open a Zoom tab, open the popup, and press FIX ZOOM. Detection alone does not clear anything. Both builds sign you out by deleting Zoom cookies; cookies can hold sign-in state, but this does not prove cookies caused Error 1132. Other sites are outside the intended scope. Manual alternative: use browser site settings to remove zoom.us and zoom.com data. Manual removal may be broader than cookie-only store cleanup.</p>
 <p>Cleanup makes no direct request, but reloading Zoom loads its normal network resources. Source popup has no telemetry. Current source Report-a-Bug page checks service availability and can send your description, selected screenshot, version, user agent and per-install support reference on submission. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/PRIVACY_POLICY.md">Browser privacy policy</a>; <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup implementation</a>. The store description says no network requests; that is not a claim about all current source reporting features.</p>
@@ -24,8 +25,8 @@
 <p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p>
 <section class="guide-card">
 <h2>Browser source screenshot</h2>
-<img src="/browser-tool.png" width="360" height="366" alt="1132 Fixer browser source 1.2.7 popup showing NOT ZOOM">
-<p>Source 1.2.7 in Chromium, captured 2026-10-04. Shows NOT ZOOM before cleanup; store 1.2.1 differs.</p>
+<img src="/browser-tool.png" width="360" height="366" alt="1132 Fixer browser source popup showing NOT ZOOM">
+<p>Source in Chromium, captured 2026-10-04. Shows NOT ZOOM before cleanup; store build differs.</p>
 </section>
 <section class="guide-card">
 <h2>Related guides</h2>
