@@ -1,7 +1,5 @@
 # 1132 Fixer canonical fact sheet
 
-Checked: 2026-10-04, Europe/Stockholm. Scope: website P1 content.
-
 This sheet separates published artifacts, current source, automated checks, and live Zoom repair. None implies the others passed.
 
 ## Claim classes
