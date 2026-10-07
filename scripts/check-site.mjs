@@ -41,10 +41,14 @@ for (const [, url] of (await sitemap.text()).matchAll(/<loc>([^<]+)<\/loc>/g)) {
   assert.equal((await fetch(url.replace('https://1132-fixer.xyz', origin), { redirect: 'manual' })).status, 200, url);
 }
 for (const agent of ['Googlebot', 'bingbot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot']) {
-  for (const path of ['/', '/favicon.svg']) {
+  for (const path of ['/', '/favicon.svg', '/robots.txt', '/sitemap.xml']) {
     const response = await get(path, { 'User-Agent': agent });
     assert.equal(response.status, 200, `${agent} ${path}`);
     assert.notEqual(response.headers.get('cf-mitigated'), 'challenge');
+    if (path === '/sitemap.xml') {
+      assert.match(response.headers.get('content-type'), /xml/);
+      assert.match(await response.text(), /<urlset\s+xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9"/);
+    }
   }
 }
 if (origin === 'https://1132-fixer.xyz') {
