@@ -9,44 +9,58 @@
 <link rel="stylesheet" href="/guides.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "1132 Fixer for Chrome", "item": "https://1132-fixer.xyz/browser/"}]}, {"@type": "SoftwareApplication", "name": "1132 Fixer for Chrome", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Chrome", "url": "https://1132-fixer.xyz/browser/", "description": "Compare Chrome store cookie cleanup with current browser source, permissions and limits.", "downloadUrl": "https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh"}]}</script>
 <script src="/release-data.js" defer></script>
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body class="guide-page">
-<main class="guide-content">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/"><img src="/app-icon-badge.png" width="48" height="48" alt="">1132 Fixer</a>
+<button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+<nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/downloads/">Downloads</a><a href="/zoom-error-1132/">Error 1132</a><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/" aria-current="page">Browser</a><a href="/how-it-works/">How it works</a><a href="/security/">Safety</a><a href="/faq/">FAQ</a></nav>
+</div>
+</header>
+<main id="main-content" class="guide-content">
 <nav aria-label="Breadcrumb">
 <a href="/">1132 Fixer</a> / <span>1132 Fixer for Browser</span>
 </nav>
 <h1>1132 Fixer for Browser</h1>
-<p>Store package: see <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: <span data-release-version="browser">Loading...</span>, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds.</p>
-<p>Store describes cookie-only cleanup with cookies and activeTab permissions plus zoom.us/zoom.com host access. Current source adds scripting to clear active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Do not assume source features are present in the store build. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/apps/extensions/chrome/manifest.json">Current manifest</a>.</p>
-<p>Source requires Chrome 114+. Edge and Brave have Chromium package targets; exact branded versions remain unverified. Brave users can use the Chrome store package; Edge has no verified Add-ons listing. Firefox has separate source packaging; Safari is not implemented. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/docs/platforms/compatibility-matrix.md">Source compatibility matrix</a>.</p>
-<p>Open a Zoom tab, open the popup, and press FIX ZOOM. Detection alone does not clear anything. Both builds sign you out by deleting Zoom cookies; cookies can hold sign-in state, but this does not prove cookies caused Error 1132. Other sites are outside the intended scope. Manual alternative: use browser site settings to remove zoom.us and zoom.com data. Manual removal may be broader than cookie-only store cleanup.</p>
-<p>Cleanup makes no direct request, but reloading Zoom loads its normal network resources. Source popup has no telemetry. Current source Report-a-Bug page checks service availability and can send your description, selected screenshot, version, user agent and per-install support reference on submission. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/PRIVACY_POLICY.md">Browser privacy policy</a>; <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup implementation</a>. The store description says no network requests; that is not a claim about all current source reporting features.</p>
-<p>Reversal: sign into Zoom again and remove the extension through browser extension settings. Deleted cookies/site data cannot be restored by uninstalling. If FIX ZOOM is hidden, check active host and granted Zoom site access. If error remains, use official Zoom reporting.</p>
-<p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p>
-<section class="guide-card">
-<h2>Browser source screenshot</h2>
+<nav class="page-index" aria-label="On this page"><strong>On this page</strong><a href="#section-1">Store and source builds</a><a href="#section-2">What changes</a><a href="#section-3">Supported browsers</a><a href="#section-4">Run the cleanup</a><a href="#section-5">Privacy and reports</a><a href="#section-6">Reversal and troubleshooting</a><a href="#section-7">Limits</a><a href="#section-8">Browser source screenshot</a><a href="#section-9">Related guides</a><a href="#section-10">References</a></nav>
+<section class="guide-section"><h2 id="section-1">Store and source builds</h2><p>Store package: see <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: <span data-release-version="browser">Loading...</span>, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds.</p></section>
+<section class="guide-section"><h2 id="section-2">What changes</h2><p>Store describes cookie-only cleanup with cookies and activeTab permissions plus zoom.us/zoom.com host access. Current source adds scripting to clear active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Do not assume source features are present in the store build. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/apps/extensions/chrome/manifest.json">Current manifest</a>.</p></section>
+<section class="guide-section"><h2 id="section-3">Supported browsers</h2><p>Source requires Chrome 114+. Edge and Brave have Chromium package targets; exact branded versions remain unverified. Brave users can use the Chrome store package; Edge has no verified Add-ons listing. Firefox has separate source packaging; Safari is not implemented. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/docs/platforms/compatibility-matrix.md">Source compatibility matrix</a>.</p></section>
+<section class="guide-section"><h2 id="section-4">Run the cleanup</h2><p>Open a Zoom tab, open the popup, and press FIX ZOOM. Detection alone does not clear anything. Both builds sign you out by deleting Zoom cookies; cookies can hold sign-in state, but this does not prove cookies caused Error 1132. Other sites are outside the intended scope. Manual alternative: use browser site settings to remove zoom.us and zoom.com data. Manual removal may be broader than cookie-only store cleanup.</p></section>
+<section class="guide-section"><h2 id="section-5">Privacy and reports</h2><p>Cleanup makes no direct request, but reloading Zoom loads its normal network resources. Source popup has no telemetry. Current source Report-a-Bug page checks service availability and can send your description, selected screenshot, version, user agent and per-install support reference on submission. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/PRIVACY_POLICY.md">Browser privacy policy</a>; <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup implementation</a>. The store description says no network requests; that is not a claim about all current source reporting features.</p></section>
+<section class="guide-section"><h2 id="section-6">Reversal and troubleshooting</h2><p>Reversal: sign into Zoom again and remove the extension through browser extension settings. Deleted cookies/site data cannot be restored by uninstalling. If FIX ZOOM is hidden, check active host and granted Zoom site access. If error remains, use official Zoom reporting.</p></section>
+<section class="guide-section"><h2 id="section-7">Limits</h2><p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p></section>
+<section class="guide-section">
+<h2 id="section-8">Browser source screenshot</h2>
 <img src="/browser-tool.png" width="360" height="366" alt="1132 Fixer browser source popup showing NOT ZOOM">
 <p>Source in Chromium, captured 2026-10-04. Shows NOT ZOOM before cleanup; store build differs.</p>
 </section>
-<section class="guide-card">
-<h2>Related guides</h2>
+<section class="guide-section">
+<h2 id="section-9">Related guides</h2>
 <nav aria-label="Related guides">
 <a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/windows/">Windows fix</a> <a href="/macos/">macOS fix</a> <a href="/how-it-works/">How it works</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
 </nav>
 </section>
-<section class="guide-card">
-<h2>References</h2>
+<section class="guide-section">
+<h2 id="section-10">References</h2>
 <p>
 <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0069762">Zoom Error 1132 reference</a>
 </p>
 <p>Source and license details checked 2026-10-04.</p>
 </section>
-<footer>
-<p>Independent project. Not affiliated with Zoom.</p>
-</footer>
-<p>
-<a href="/fact-sheet.md">Source facts and verification notes</a>
-</p>
+
+
 </main>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong>1132 Fixer</strong><p>Provided for free by OP and HT.</p><p>Independent project. Not affiliated with Zoom.</p></div>
+<nav aria-label="Footer downloads"><strong>Downloads</strong><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/downloads/">All downloads</a></nav>
+<nav aria-label="Footer resources"><strong>Help and project</strong><a href="/faq/">Frequently asked questions</a><a href="/security/">Safety and privacy</a><a href="https://github.com/1132-Fixer">Source and bug reports</a><a href="https://t.me/Team1132Fixer">Telegram channel</a><a href="/fact-sheet.md">Source facts and verification notes</a></nav>
+</div>
+</footer>
 </body>
 </html>

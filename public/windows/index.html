@@ -9,45 +9,59 @@
 <link rel="stylesheet" href="/guides.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "1132 Fixer for Windows", "item": "https://1132-fixer.xyz/windows/"}]}, {"@type": "SoftwareApplication", "name": "1132 Fixer for Windows", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows 10/11 x64", "url": "https://1132-fixer.xyz/windows/", "description": "Windows requirements, helper-account changes, permissions, rollback and verified release links.", "downloadUrl": "https://github.com/1132-Fixer/windows/releases/latest"}]}</script>
 <script src="/release-data.js" defer></script>
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body class="guide-page">
-<main class="guide-content">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/"><img src="/app-icon-badge.png" width="48" height="48" alt="">1132 Fixer</a>
+<button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+<nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/downloads/">Downloads</a><a href="/zoom-error-1132/">Error 1132</a><a href="/windows/" aria-current="page">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/how-it-works/">How it works</a><a href="/security/">Safety</a><a href="/faq/">FAQ</a></nav>
+</div>
+</header>
+<main id="main-content" class="guide-content">
 <nav aria-label="Breadcrumb">
 <a href="/">1132 Fixer</a> / <span>1132 Fixer for Windows</span>
 </nav>
 <h1>1132 Fixer for Windows</h1>
-<p>Latest published build: <span data-release-version="windows">Loading...</span>. Project requirements: Windows 10/11, x64, Zoom Workplace installed machine-wide, administrator approval, and Secondary Logon service. ARM64 native support is not verified.</p>
-<p>Install Setup or use Portable from <a href="https://github.com/1132-Fixer/windows/releases/latest">Windows release notes</a>. Run as administrator, read the checks, then press Fix now. Do not run while signed in as user1. Do not use on a managed computer without permission, or if user1 contains files you need.</p>
-<p>Source workflow stops helper sessions, deletes the old user1 account and profile, creates a standard helper account with a fresh random password, starts installed Zoom as that account, and can create a desktop launcher. The helper password is sealed with Windows DPAPI (encryption tied to your Windows account) under %APPDATA%\1132 Fixer. The workflow also applies Zoom helper-profile settings and camera/microphone consent settings. <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/main.js">Repair workflow</a>; <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/helper-credential.js">Credential storage</a>.</p>
-<p>Update checks use GitHub; older builds can use Botify or retired channels. Optional support uses a configured support endpoint, a per-install support reference, your report, and optional screenshot. Review reports before sending. <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/src/main/support-client.js">Support network and identifiers</a>. No automatic telemetry is claimed in <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/docs/security/threat-model.md">project threat model</a>; deployed server log retention remains unverified.</p>
-<p>Rollback: close helper Zoom, sign in as a different administrator, remove the helper launcher, then remove user1 through Windows account management. Remove its old profile separately through System Properties > Advanced > User Profiles. This cannot restore deleted helper data or guarantee every applied system setting returns to its prior value. Back up required data first.</p>
-<p>Troubleshooting: install machine-wide Zoom if it is not found; check Secondary Logon and administrator access; inspect camera/microphone privacy settings if devices are missing. A successful process launch does not prove Error 1132 is resolved.</p>
-<p>Check the signature state for the build you download. Do not treat SmartScreen as a verification failure to bypass blindly. Compare SHA-256 with <a href="https://github.com/1132-Fixer/windows/releases/latest">published checksums</a> and inspect <a href="https://github.com/1132-Fixer/windows/releases/latest">release signature state</a>.</p>
-<p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p>
-<section class="guide-card">
-<h2>Related guides</h2>
+<nav class="page-index" aria-label="On this page"><strong>On this page</strong><a href="#section-1">Requirements</a><a href="#section-2">Before you run</a><a href="#section-3">What changes</a><a href="#section-4">Updates and reports</a><a href="#section-5">Rollback</a><a href="#section-6">Troubleshooting</a><a href="#section-7">Verify your download</a><a href="#section-8">Limits</a><a href="#section-9">Related guides</a><a href="#section-10">References</a><a href="#section-11">Project screenshot</a></nav>
+<section class="guide-section"><h2 id="section-1">Requirements</h2><p>Latest published build: <span data-release-version="windows">Loading...</span>. Project requirements: Windows 10/11, x64, Zoom Workplace installed machine-wide, administrator approval, and Secondary Logon service. ARM64 native support is not verified.</p></section>
+<section class="guide-section"><h2 id="section-2">Before you run</h2><p>Install Setup or use Portable from <a href="https://github.com/1132-Fixer/windows/releases/latest">Windows release notes</a>. Run as administrator, read the checks, then press Fix now. Do not run while signed in as user1. Do not use on a managed computer without permission, or if user1 contains files you need.</p></section>
+<section class="guide-section"><h2 id="section-3">What changes</h2><p>Source workflow stops helper sessions, deletes the old user1 account and profile, creates a standard helper account with a fresh random password, starts installed Zoom as that account, and can create a desktop launcher. The helper password is sealed with Windows DPAPI (encryption tied to your Windows account) under %APPDATA%\1132 Fixer. The workflow also applies Zoom helper-profile settings and camera/microphone consent settings. <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/main.js">Repair workflow</a>; <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/helper-credential.js">Credential storage</a>.</p></section>
+<section class="guide-section"><h2 id="section-4">Updates and reports</h2><p>Update checks use GitHub; older builds can use Botify or retired channels. Optional support uses a configured support endpoint, a per-install support reference, your report, and optional screenshot. Review reports before sending. <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/src/main/support-client.js">Support network and identifiers</a>. No automatic telemetry is claimed in <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/docs/security/threat-model.md">project threat model</a>; deployed server log retention remains unverified.</p></section>
+<section class="guide-section"><h2 id="section-5">Rollback</h2><p>Rollback: close helper Zoom, sign in as a different administrator, remove the helper launcher, then remove user1 through Windows account management. Remove its old profile separately through System Properties > Advanced > User Profiles. This cannot restore deleted helper data or guarantee every applied system setting returns to its prior value. Back up required data first.</p></section>
+<section class="guide-section"><h2 id="section-6">Troubleshooting</h2><p>Troubleshooting: install machine-wide Zoom if it is not found; check Secondary Logon and administrator access; inspect camera/microphone privacy settings if devices are missing. A successful process launch does not prove Error 1132 is resolved.</p></section>
+<section class="guide-section"><h2 id="section-7">Verify your download</h2><p>Check the signature state for the build you download. Do not treat SmartScreen as a verification failure to bypass blindly. Compare SHA-256 with <a href="https://github.com/1132-Fixer/windows/releases/latest">published checksums</a> and inspect <a href="https://github.com/1132-Fixer/windows/releases/latest">release signature state</a>.</p></section>
+<section class="guide-section"><h2 id="section-8">Limits</h2><p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p></section>
+<section class="guide-section">
+<h2 id="section-9">Related guides</h2>
 <nav aria-label="Related guides">
 <a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/macos/">macOS fix</a> <a href="/browser/">Browser fix</a> <a href="/how-it-works/">How it works</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
 </nav>
 </section>
-<section class="guide-card">
-<h2>References</h2>
+<section class="guide-section">
+<h2 id="section-10">References</h2>
 <p>
 <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0069762">Zoom Error 1132 reference</a>
 </p>
 <p>Source and license details checked 2026-10-04.</p>
 </section>
-<section class="guide-card">
-<h2>Project screenshot</h2>
+<section class="guide-section">
+<h2 id="section-11">Project screenshot</h2>
 <img src="/windows-tool.png" alt="1132 Fixer windows tool interface from project design system" width="520" height="600">
 <p>Project capture. Capture version/date and current release appearance not independently verified.</p>
 </section>
-<footer>
-<p>Independent project. Not affiliated with Zoom.</p>
-</footer>
-<p>
-<a href="/fact-sheet.md">Source facts and verification notes</a>
-</p>
+
+
 </main>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong>1132 Fixer</strong><p>Provided for free by OP and HT.</p><p>Independent project. Not affiliated with Zoom.</p></div>
+<nav aria-label="Footer downloads"><strong>Downloads</strong><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/downloads/">All downloads</a></nav>
+<nav aria-label="Footer resources"><strong>Help and project</strong><a href="/faq/">Frequently asked questions</a><a href="/security/">Safety and privacy</a><a href="https://github.com/1132-Fixer">Source and bug reports</a><a href="https://t.me/Team1132Fixer">Telegram channel</a><a href="/fact-sheet.md">Source facts and verification notes</a></nav>
+</div>
+</footer>
 </body>
 </html>

@@ -8,62 +8,77 @@
 <link rel="canonical" href="https://1132-fixer.xyz/how-it-works/">
 <link rel="stylesheet" href="/guides.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "1132 Fixer", "item": "https://1132-fixer.xyz/"}, {"@type": "ListItem", "position": 2, "name": "How 1132 Fixer Works", "item": "https://1132-fixer.xyz/how-it-works/"}]}]}</script>
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body class="guide-page">
-<main class="guide-content">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/"><img src="/app-icon-badge.png" width="48" height="48" alt="">1132 Fixer</a>
+<button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+<nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/">Home</a><a href="/downloads/">Downloads</a><a href="/zoom-error-1132/">Error 1132</a><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/security/">Safety</a><a href="/faq/">FAQ</a></nav>
+</div>
+</header>
+<main id="main-content" class="guide-content">
 <nav aria-label="Breadcrumb">
 <a href="/">1132 Fixer</a> / <span>How 1132 Fixer Works</span>
 </nav>
 <h1>How 1132 Fixer Works</h1>
-<section class="guide-card">
-<h2>Windows: separate local profile</h2>
-<p>Initial state: machine-wide Zoom installed; administrator signed in as someone other than user1.</p>
-<p>Actions: stop helper sessions; reset user1 account and profile; create standard helper with random password; launch Zoom under that account; apply helper settings, consent entries and optional shortcut.</p>
+<nav class="page-index" aria-label="On this page"><strong>On this page</strong><a href="#section-1">Windows: separate local profile</a><a href="#section-2">macOS: local reset and sandbox</a><a href="#section-3">Browser: explicit Zoom cleanup</a><a href="#section-4">Related guides</a><a href="#section-5">References</a></nav>
+<div class="comparison-scroll" role="region" aria-label="Platform comparison" tabindex="0"><table class="platform-table"><caption>Repair scope at a glance</caption><thead><tr><th scope="col">Platform</th><th scope="col">Main change</th><th scope="col">Reversal</th></tr></thead><tbody><tr><th scope="row">Windows</th><td>Reset helper account user1 and launch Zoom under it.</td><td>Remove helper account, profile, and launcher.</td></tr><tr><th scope="row">macOS</th><td>Reset Zoom app data and launch through a sandbox.</td><td>Launch Zoom normally; restore needed data from backup.</td></tr><tr><th scope="row">Browser</th><td>Remove Zoom cookies; source also clears site data.</td><td>Sign in again or remove extension.</td></tr></tbody></table></div>
+<section class="guide-section">
+<h2 id="section-1">Windows: separate local profile</h2>
+<p class="workflow-row"><strong>Initial state</strong><span>machine-wide Zoom installed; administrator signed in as someone other than user1.</span></p>
+<p class="workflow-row"><strong>Actions</strong><span>stop helper sessions; reset user1 account and profile; create standard helper with random password; launch Zoom under that account; apply helper settings, consent entries and optional shortcut.</span></p>
 <p>Permissions: administrator and Secondary Logon. Credential file: %APPDATA%\1132 Fixer\helper-credential.bin, protected by Windows CurrentUser DPAPI. Updates use GitHub; optional support sends reports to build-configured service.</p>
-<p>Final state: Zoom runs under helper profile if launch succeeds. This does not prove error recovery. Reversal removes helper account/profile and launcher; deleted data needs backup and changed consent/settings may need separate review.</p>
+<p class="workflow-row"><strong>Final state</strong><span>Zoom runs under helper profile if launch succeeds. This does not prove error recovery. Reversal removes helper account/profile and launcher; deleted data needs backup and changed consent/settings may need separate review.</span></p>
 <p>
 <a href="/windows/">Windows instructions and limits</a> | <a href="https://github.com/1132-Fixer/windows/blob/0981a721b91972a18b6240056f0e0a9e797dd33a/main.js">Exact workflow source</a>
 </p>
 </section>
-<section class="guide-card">
-<h2>macOS: local reset and sandbox</h2>
-<p>Initial state: installed Zoom, macOS 13+, available administrator approval.</p>
-<p>Actions: close Zoom and updater processes; stop/disable updater agents; check VPN/network; remove Zoom data/cache/preferences/logs/saved state from home Library; flush DNS; request camera/microphone access; launch Zoom under sandbox-exec. macOS 13 network repair may change and reconnect MAC address; macOS 14+ skips spoofing.</p>
+<section class="guide-section">
+<h2 id="section-2">macOS: local reset and sandbox</h2>
+<p class="workflow-row"><strong>Initial state</strong><span>installed Zoom, macOS 13+, available administrator approval.</span></p>
+<p class="workflow-row"><strong>Actions</strong><span>close Zoom and updater processes; stop/disable updater agents; check VPN/network; remove Zoom data/cache/preferences/logs/saved state from home Library; flush DNS; request camera/microphone access; launch Zoom under sandbox-exec. macOS 13 network repair may change and reconnect MAC address; macOS 14+ skips spoofing.</span></p>
 <p>Network: GitHub update check; optional report sends system information and diagnostics to configured report endpoint. Source default: 1132-bug-report-production.up.railway.app.</p>
-<p>Final state: reset local session and sandboxed Zoom launch if steps pass. Reversal: quit and launch Zoom normally, restore needed data from backup, review updater agents/network changes. Uninstall does not restore deleted state.</p>
+<p class="workflow-row"><strong>Final state</strong><span>reset local session and sandboxed Zoom launch if steps pass. Reversal: quit and launch Zoom normally, restore needed data from backup, review updater agents/network changes. Uninstall does not restore deleted state.</span></p>
 <p>
 <a href="/macos/">macOS instructions and verification</a> | <a href="https://github.com/1132-Fixer/macos/blob/a72fc1432a080b328474c5fa6b359141a29e003c/Sources/1132Fixer/ShellCommands.swift">Exact commands</a>
 </p>
 </section>
-<section class="guide-card">
-<h2>Browser: explicit Zoom cleanup</h2>
-<p>Initial state: active Zoom tab with browser cookies/site data. Detection clears nothing.</p>
-<p>Action: press FIX ZOOM. Store removes Zoom cookies; source additionally clears active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Then reload active tab. Other websites remain outside intended scope.</p>
+<section class="guide-section">
+<h2 id="section-3">Browser: explicit Zoom cleanup</h2>
+<p class="workflow-row"><strong>Initial state</strong><span>active Zoom tab with browser cookies/site data. Detection clears nothing.</span></p>
+<p class="workflow-row"><strong>Action</strong><span>press FIX ZOOM. Store removes Zoom cookies; source additionally clears active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Then reload active tab. Other websites remain outside intended scope.</span></p>
 <p>Permissions: cookies, activeTab, Zoom host access; source also scripting. Cleanup has no direct network request; tab reload loads Zoom resources. Optional source report page contacts project support service.</p>
-<p>Final state: Zoom browser sign-in state removed. Reversal: sign in again or remove extension. Deleted data cannot be restored by uninstalling. Cleanup status is not proof of Error 1132 recovery.</p>
+<p class="workflow-row"><strong>Final state</strong><span>Zoom browser sign-in state removed. Reversal: sign in again or remove extension. Deleted data cannot be restored by uninstalling. Cleanup status is not proof of Error 1132 recovery.</span></p>
 <p>
 <a href="/browser/">Store/source differences and browser instructions</a> | <a href="https://github.com/1132-Fixer/browser/tree/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup source</a>
 </p>
 </section>
-<section class="guide-card">
-<h2>Related guides</h2>
+<section class="guide-section">
+<h2 id="section-4">Related guides</h2>
 <nav aria-label="Related guides">
 <a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/windows/">Windows fix</a> <a href="/macos/">macOS fix</a> <a href="/browser/">Browser fix</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
 </nav>
 </section>
-<section class="guide-card">
-<h2>References</h2>
+<section class="guide-section">
+<h2 id="section-5">References</h2>
 <p>
 <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0069762">Zoom Error 1132 reference</a>
 </p>
 <p>Source and license details checked 2026-10-04.</p>
 </section>
-<footer>
-<p>Independent project. Not affiliated with Zoom.</p>
-</footer>
-<p>
-<a href="/fact-sheet.md">Source facts and verification notes</a>
-</p>
+
+
 </main>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong>1132 Fixer</strong><p>Provided for free by OP and HT.</p><p>Independent project. Not affiliated with Zoom.</p></div>
+<nav aria-label="Footer downloads"><strong>Downloads</strong><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/downloads/">All downloads</a></nav>
+<nav aria-label="Footer resources"><strong>Help and project</strong><a href="/faq/">Frequently asked questions</a><a href="/security/">Safety and privacy</a><a href="https://github.com/1132-Fixer">Source and bug reports</a><a href="https://t.me/Team1132Fixer">Telegram channel</a><a href="/fact-sheet.md">Source facts and verification notes</a></nav>
+</div>
+</footer>
 </body>
 </html>

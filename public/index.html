@@ -567,8 +567,18 @@
 </style>
 <link rel="stylesheet" href="/guides.css">
 <link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/"><img src="/app-icon-badge.png" width="48" height="48" alt="">1132 Fixer</a>
+<button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+<nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/downloads/">Downloads</a><a href="/zoom-error-1132/">Error 1132</a><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/how-it-works/">How it works</a><a href="/security/">Safety</a><a href="/faq/">FAQ</a></nav>
+</div>
+</header>
 
 <div class="scam-warning" role="alert" hidden>
   <span class="scam-warning-icon" aria-hidden="true">⚠︎</span>
@@ -604,6 +614,7 @@
       Telegram Channel
     </a>
   </nav>
+
   <header>
     <div class="logo-wrap">
       <img class="app-icon" src="/app-icon-badge.png" width="88" height="88" alt="1132 Fixer icon" onerror="this.style.display='none'">
@@ -616,7 +627,7 @@
     </div>
   </header>
 
-  <main class="guide-content home-content">
+  <main id="main-content" class="guide-content home-content">
 <div class="home-intro"><h1>Fix Zoom Error Code 1132</h1><p>Free tools for Windows, macOS and your browser. Choose your platform to get started.</p><p class="scope-note">Independent project. Results vary. <a href="/security/">Read safety notes before use</a>.</p></div>
   <div class="divider"></div>
 
@@ -807,6 +818,7 @@
   <h2 id="before-title">Before you start</h2>
   <p>Back up required data. These tools change local state and cannot guarantee recovery. <a href="/security/">Read safety and license details</a>.</p>
 </section>
+<section class="home-section"><h2>Start with three steps</h2><ol class="start-steps"><li><strong>Check your platform</strong><p>Read requirements for Windows, macOS, or your browser.</p></li><li><strong>Review the changes</strong><p>Back up required data and read safety notes.</p></li><li><strong>Choose your download</strong><p>Use official release links and follow platform instructions.</p></li></ol></section>
 <section class="home-section" aria-labelledby="learn-title">
   <h2 id="learn-title">Know what changes</h2>
 <details class="home-detail"><summary>Understand Error 1132</summary><div class="home-detail-body"><p>Users report that Error 1132 appears in the Zoom desktop app when they try to join any meeting or sign in to a Zoom account on the affected device.</p><p>Long-term users report that Error 1132 is a device ban linked to violations of Zoom's terms. They report that the ban cannot be reversed and that 1132 Fixer provides a workaround.</p><p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p></div></details><details class="home-detail"><summary>Choose your platform</summary><div class="home-detail-body"><p><a href="/windows/">Windows requirements and helper-account repair</a> | <a href="/macos/">macOS requirements and data reset</a> | <a href="/browser/">Browser versions and cookie cleanup</a></p></div></details><details class="home-detail"><summary>How it works</summary><div class="home-detail-body"><p>Windows starts Zoom as helper account user1. macOS resets Zoom data and launches through a sandbox. Browser cleanup removes Zoom browser state only after a click. <a href="/how-it-works/">Read changes for every platform</a>.</p></div></details>
@@ -818,10 +830,7 @@
   <p class="home-fact-sheet"><a href="/fact-sheet.md">Source facts and verification notes</a></p>
 </section>
 </main>
-  <footer>
-    <strong>Provided to you for free</strong> by OP and HT.
-    <span class="disclaimer">Independent project. Not affiliated with Zoom.</span>
-  </footer>
+
 </div>
 
 <div class="modal-overlay" id="discussion-modal" role="dialog" aria-modal="true" aria-labelledby="discussion-title">
@@ -1197,5 +1206,12 @@
   switchTab(detectOS());
   hydrateFromGitHub();
 </script>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong>1132 Fixer</strong><p>Provided for free by OP and HT.</p><p>Independent project. Not affiliated with Zoom.</p></div>
+<nav aria-label="Footer downloads"><strong>Downloads</strong><a href="/windows/">Windows</a><a href="/macos/">macOS</a><a href="/browser/">Browser</a><a href="/downloads/">All downloads</a></nav>
+<nav aria-label="Footer resources"><strong>Help and project</strong><a href="/faq/">Frequently asked questions</a><a href="/security/">Safety and privacy</a><a href="https://github.com/1132-Fixer">Source and bug reports</a><a href="https://t.me/Team1132Fixer">Telegram channel</a><a href="/fact-sheet.md">Source facts and verification notes</a></nav>
+</div>
+</footer>
 </body>
 </html>
