@@ -15,22 +15,22 @@
 <a href="/">1132 Fixer</a> / <span>1132 Fixer for Browser</span>
 </nav>
 <h1>1132 Fixer for Browser</h1>
-<p>Store package: 1.2.1, updated 2026-08-06, from <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: 1.2.7, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds. Last branded Chrome/Edge/Brave test date: not verified in this audit.</p>
+<p>Store package: 1.2.1, updated 2026-08-06, from <a href="https://chromewebstore.google.com/detail/1132-fixer-for-chrome/fccnmckeeddpkhocebnbfnlapcjllljh">Chrome Web Store</a>. Current public source: 1.2.7, <a href="https://github.com/1132-Fixer/browser">browser repository</a>. These are different builds.</p>
 <p>Store 1.2.1 describes cookie-only cleanup with cookies and activeTab permissions plus zoom.us/zoom.com host access. Current source 1.2.7 adds scripting to clear active Zoom-origin localStorage, sessionStorage, Cache API and IndexedDB. Do not assume source features are present in the store build. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/apps/extensions/chrome/manifest.json">Current manifest</a>.</p>
 <p>Source requires Chrome 114+. Edge and Brave have Chromium package targets; exact branded versions remain unverified. Brave users can use the Chrome store package; Edge has no verified Add-ons listing. Firefox has separate source packaging; Safari is not implemented. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/docs/platforms/compatibility-matrix.md">Source compatibility matrix</a>.</p>
 <p>Open a Zoom tab, open the popup, and press FIX ZOOM. Detection alone does not clear anything. Both builds sign you out by deleting Zoom cookies; cookies can hold sign-in state, but this does not prove cookies caused Error 1132. Other sites are outside the intended scope. Manual alternative: use browser site settings to remove zoom.us and zoom.com data. Manual removal may be broader than cookie-only store cleanup.</p>
 <p>Cleanup makes no direct request, but reloading Zoom loads its normal network resources. Source popup has no telemetry. Current source Report-a-Bug page checks service availability and can send your description, selected screenshot, version, user agent and per-install support reference on submission. <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/PRIVACY_POLICY.md">Browser privacy policy</a>; <a href="https://github.com/1132-Fixer/browser/blob/d3d6b7dfbf9473a5d17b3c6ac947feac02cc464d/packages/core/src">Cleanup implementation</a>. The store description says no network requests; that is not a claim about all current source reporting features.</p>
-<p>Reversal: sign into Zoom again and remove the extension through browser extension settings. Deleted cookies/site data cannot be restored by uninstalling. If FIX ZOOM is hidden, check active host and granted Zoom site access. If error remains, use official Zoom reporting. Source 1.2.7 automated checks passed on 2026-10-04: 45 unit tests and six end-to-end suites. Chromium 151.0.7922.34 and Firefox 153.0 were used. Cleanup tests use controlled browser API fixtures; they do not prove Zoom recovery. Branded Chrome/Edge/Brave runtime tests remain pending.</p>
-<p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery. No current success rate or tested Zoom-version matrix is published here.</p>
+<p>Reversal: sign into Zoom again and remove the extension through browser extension settings. Deleted cookies/site data cannot be restored by uninstalling. If FIX ZOOM is hidden, check active host and granted Zoom site access. If error remains, use official Zoom reporting.</p>
+<p>These tools change local state. They cannot confirm why Zoom refused access, remove an account restriction, or guarantee recovery.</p>
 <section class="guide-card">
 <h2>Browser source screenshot</h2>
 <img src="/browser-tool.png" width="360" height="366" alt="1132 Fixer browser source 1.2.7 popup showing NOT ZOOM">
-<p>Captured 2026-10-04 from source 1.2.7 installed as a real extension in Chromium 151.0.7922.34. NOT ZOOM state; no cleanup was run. This is not store 1.2.1 or a repair-outcome screenshot.</p>
+<p>Source 1.2.7 in Chromium, captured 2026-10-04. Shows NOT ZOOM before cleanup; store 1.2.1 differs.</p>
 </section>
 <section class="guide-card">
 <h2>Related guides</h2>
 <nav aria-label="Related guides">
-<a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/windows/">Windows fix</a> <a href="/macos/">macOS fix</a> <a href="/browser/">Browser fix</a> <a href="/how-it-works/">How it works</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
+<a href="/zoom-error-1132/">Zoom Error 1132 guide</a> <a href="/windows/">Windows fix</a> <a href="/macos/">macOS fix</a> <a href="/how-it-works/">How it works</a> <a href="/security/">Safety and privacy</a> <a href="/faq/">Frequently asked questions</a> <a href="/downloads/">Official downloads</a>
 </nav>
 </section>
 <section class="guide-card">
@@ -38,13 +38,13 @@
 <p>
 <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0069762">Zoom Error 1132 reference</a>
 </p>
-<p>Source and license details checked 2026-10-04. Runtime repair, branded browser versions, and release signing checks have separate evidence requirements.</p>
+<p>Source and license details checked 2026-10-04.</p>
 </section>
 <footer>
 <p>Independent project. Not affiliated with Zoom.</p>
 </footer>
 <p>
-<a href="/fact-sheet.md">Read canonical fact sheet and evidence gaps</a>
+<a href="/fact-sheet.md">Source facts and verification notes</a>
 </p>
 </main>
 </body>
